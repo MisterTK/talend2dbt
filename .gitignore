@@ -48,3 +48,10 @@ sample_jobs/
 # Talend outputs
 talend_processed/
 dbt_migrated/
+
+# Local development files
+CLAUDE.md
+GEMINI.md
+.claude/
+.gemini/
+examples/
