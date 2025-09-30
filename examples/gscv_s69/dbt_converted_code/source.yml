@@ -1,0 +1,121 @@
+version: 2
+
+sources:
+  - name: Redshift_gdap_Schema
+    project: dmgcp-del-155
+    schema: "{{ var('Redshift_gdap_Schema') }}"
+    tables:
+    - name: supp_fcil
+    - name: fcil
+    - name: supp
+    - name: pren_supp
+    - name: supp_ad
+    - name: org_ad_typ
+    - name: org_ad
+    - name: ctry
+    - name: fcil_ad
+    - name: raw_itm
+    - name: shpg_unt_cat_hrcy_srm
+    - name: curn
+    - name: shpg_unt
+    - name: dly_dc_rcpt
+    - name: dly_curn_xcng_rate
+    - name: dc_mkt
+    - name: fcil_itm_prc_comu
+    - name: prc_cntr
+    - name: non_compliance_raw_itm
+    - name: FIBR_OGIN_FORS_CTRY_RISK
+    - name: GSCV_FIBR_TREE_SPCS_GRP
+    - name: GSCV_FIBR_RM_ctry_lookup
+    - name: dc_rcpt
+    - name: schn_data_srce
+    - name: shpg_unt_cat_hrcy_map
+    - name: supp_addr
+    - name: sim_supp_stus
+    - name: supp_fcil_gln_rlat
+    - name: pren_supp_rlat
+      
+
+
+    
+
+  - name: Redshift_gdap_data_audit
+    project: dmgcp-del-155
+    schema: "{{ var('Redshift_gdap_data_audit_schema') }}"
+    tables:
+      - name: schn_oti_objt_dq_rule_assc
+      - name: oti_dc_rcpt_rjct
+      - name: oti_dc_raw_itm_invn
+
+  - name: Redshift_gdap_Stage
+    project: dmgcp-del-155
+    schema: "{{ var('Redshift_gdap_Stage') }}"
+    tables:
+      - name: schn_oti_objt_dq_rule_assc
+      - name: oti_dc_rcpt_rjct
+      - name: stg_dly_dc_rcpt
+      - name: fcil_itm_prc_comu_stg
+      - name: oti_fcil_itm_pricing_comu_rjct
+
+  - name : Redshift_gdap_Utility
+    project: dmgcp-del-155
+    schema: "{{ var('Redshift_gdap_Utility') }}"
+    tables: 
+      - name : fibr_raw_mtrl_supd
+      - name: shpg_unt_cat_hrcy_map
+
+  - name: rmdw_tables
+    project: dmgcp-del-155
+    schema: rmdw_tables
+    tables:
+      - name: GSCV_SC_OTI_DQ_Rules_csv
+      - name: GSCV_DLY_DC_RCPT_ETL_REJECTS_psv
+      - name: gscv_dly_dc_rcpt_dly_xcng_rate_rej_psv
+      - name: price_communication_term_condition
+      - name : PRICE_COMMUNICATION_STATUS
+      - name: non_compliance_raw_itm_file
+      - name: PRICE_COMM_DC_MKT_inputfile
+      - name: FCIL_ITM_PRC_COMU_file
+      - name: FILE_ATTRB_in
+      - name: GSCV_DQ_OTI_reject_final_INSERT
+      - name: GSCV_FTSG_ASSC_infile
+      - name: GSCV_FTSG_infile2
+      - name: GSCV_FOFC_ASSC_psv_infile1
+      - name: GLBL_CTRY_psv_2
+      - name: GSCV_FiberRM_source
+      - name: GLBL_CTRY
+      - name: ctry_aow
+      - name: GSCV_FFPR
+      - name: GSCV_FCCT
+      - name: GSCV_PPTG
+      - name: RAW_MTRL_CERT
+      - name: GSCV_FCIL_LCL
+      - name: JS_IN_LOCAL
+      - name: GSCV_Inventory_Invalid_data_final
+      - name: JS_IN_VALID_s58_100
+      - name: JS_IN_GLMA_DATA_LOAD_SLA
+      - name : GLMA_DATA_LOAD_SLA
+      - name : JS_IN_GLMA_DATA_LAYR
+      - name : JS_IN_GLMA_SLS_SRCE_OPT
+      - name : JS_IN_GLMA_CTRY_SLS_PLCY
+      - name : JS_IN_GLMA_IVLD_SLS_RESN
+      - name : JS_IN_GLMA_CTRY_PMIX_PLCY
+      - name : JS_IN_GLBL_CTRY
+      - name : JS_IN_GLMA_DW_TERR_DATA_LAYR_ICRM_LOAD
+      - name : JS_IN_metedata_state_result
+  
+    
+
+  - name: FK_OTI_RECON 
+    project: dmgcp-del-155
+    schema: MCD_DBT
+    tables:
+      - name: FK_OTI_RECON_rejects_GSCV_DCReceipts_FK_Source1_FINAL_psv
+      - name: GSCV_DCReceipts_FK_Source_valid_psv
+
+  - name: MCD_DBT
+    project: dmgcp-del-155
+    schema: MCD_DBT
+    tables:
+    - name: GSCV_FIBR_RM
+    - name: GSCV_Inventory_Valid_data_final

@@ -1,0 +1,1031 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><talendfile:ProcessType xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd" xmlns:xmi="http://www.omg.org/XMI" defaultContext="Development" jobType="Standard" xmi:version="2.0">
+  <context confirmationNeeded="false" name="Development">
+    <contextParameter comment="" internalId="_vwHaINeDEeyFC4jiot57sQ" name="DwDataTypId" prompt="DwDataTypId?" promptNeeded="false" repositoryContextId="_p1z2c1m6Ee26dcjpa3ATew" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_vwIBMNeDEeyFC4jiot57sQ" name="ErrMsg" prompt="ErrMsg?" promptNeeded="false" repositoryContextId="_p1z2c1m6Ee26dcjpa3ATew" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_vwIBMdeDEeyFC4jiot57sQ" name="GrandMasterName" prompt="GrandMasterName?" promptNeeded="false" repositoryContextId="_p1z2c1m6Ee26dcjpa3ATew" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_vwIBMteDEeyFC4jiot57sQ" name="IsJobMaster" prompt="IsJobMaster?" promptNeeded="false" repositoryContextId="_p1z2c1m6Ee26dcjpa3ATew" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_vwIBM9eDEeyFC4jiot57sQ" name="JobGrpId" prompt="JobGrpId?" promptNeeded="false" repositoryContextId="_p1z2c1m6Ee26dcjpa3ATew" type="id_Long" value="-1"/>
+    <contextParameter comment="" internalId="_vwIBNNeDEeyFC4jiot57sQ" name="JobLogId" prompt="JobLogId?" promptNeeded="false" repositoryContextId="_p1z2c1m6Ee26dcjpa3ATew" type="id_Long" value=""/>
+    <contextParameter comment="" internalId="_vwIBNdeDEeyFC4jiot57sQ" name="JobMasterName" prompt="JobMasterName?" promptNeeded="false" repositoryContextId="_p1z2c1m6Ee26dcjpa3ATew" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_vwIBNteDEeyFC4jiot57sQ" name="JobName" prompt="JobName?" promptNeeded="false" repositoryContextId="_p1z2c1m6Ee26dcjpa3ATew" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_vwIBN9eDEeyFC4jiot57sQ" name="JobRejObj" prompt="JobRejObj?" promptNeeded="false" repositoryContextId="_p1z2c1m6Ee26dcjpa3ATew" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_vwIBONeDEeyFC4jiot57sQ" name="JobRunId" prompt="JobRunId?" promptNeeded="false" repositoryContextId="_p1z2c1m6Ee26dcjpa3ATew" type="id_Long" value="-1"/>
+    <contextParameter comment="" internalId="_vwIBOdeDEeyFC4jiot57sQ" name="JobSrcObj" prompt="JobSrcObj?" promptNeeded="false" repositoryContextId="_p1z2c1m6Ee26dcjpa3ATew" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_vwIBOteDEeyFC4jiot57sQ" name="JobStatus" prompt="JobStatus?" promptNeeded="false" repositoryContextId="_p1z2c1m6Ee26dcjpa3ATew" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_vwIBO9eDEeyFC4jiot57sQ" name="JobTgtObj" prompt="JobTgtObj?" promptNeeded="false" repositoryContextId="_p1z2c1m6Ee26dcjpa3ATew" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_vwIBPNeDEeyFC4jiot57sQ" name="RejRowCnt" prompt="RejRowCnt?" promptNeeded="false" repositoryContextId="_p1z2c1m6Ee26dcjpa3ATew" type="id_Integer" value=""/>
+    <contextParameter comment="" internalId="_vwIBPdeDEeyFC4jiot57sQ" name="SendEmailFlg" prompt="SendEmailFlg?" promptNeeded="false" repositoryContextId="_p1z2c1m6Ee26dcjpa3ATew" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_vwIBPteDEeyFC4jiot57sQ" name="SrcRowCnt" prompt="SrcRowCnt?" promptNeeded="false" repositoryContextId="_p1z2c1m6Ee26dcjpa3ATew" type="id_Integer" value=""/>
+    <contextParameter comment="" internalId="_vwIBP9eDEeyFC4jiot57sQ" name="StaticFileName" prompt="StaticFileName?" promptNeeded="false" repositoryContextId="_p1z2c1m6Ee26dcjpa3ATew" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_vwIBQNeDEeyFC4jiot57sQ" name="Subject_Area" prompt="Subject_Area?" promptNeeded="false" repositoryContextId="_p1z2c1m6Ee26dcjpa3ATew" type="id_String" value=""/>
+    <contextParameter comment="    " internalId="_vwIBQdeDEeyFC4jiot57sQ" name="SubjId" prompt="SubjId?" promptNeeded="false" repositoryContextId="_p1z2c1m6Ee26dcjpa3ATew" type="id_Long" value=""/>
+    <contextParameter comment="" internalId="_vwIBQteDEeyFC4jiot57sQ" name="TgtDS" prompt="TgtDS?" promptNeeded="false" repositoryContextId="_p1z2c1m6Ee26dcjpa3ATew" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_vwIBQ9eDEeyFC4jiot57sQ" name="TgtFlg" prompt="TgtFlg?" promptNeeded="false" repositoryContextId="_p1z2c1m6Ee26dcjpa3ATew" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_vwIBRNeDEeyFC4jiot57sQ" name="TgtRowCnt" prompt="TgtRowCnt?" promptNeeded="false" repositoryContextId="_p1z2c1m6Ee26dcjpa3ATew" type="id_Integer" value=""/>
+    <contextParameter comment="" internalId="_vwIBRdeDEeyFC4jiot57sQ" name="TgtSeqNo" prompt="TgtSeqNo?" promptNeeded="false" repositoryContextId="_p1z2c1m6Ee26dcjpa3ATew" type="id_Short" value=""/>
+    <contextParameter comment="api connection timeout value in seconds for tRestClient" internalId="_vwcxUNeDEeyFC4jiot57sQ" name="api_connection_timeout" prompt="api_connection_timeout?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_Integer" value="60"/>
+    <contextParameter comment="key value for authorization to connect to api" internalId="_vwcxUdeDEeyFC4jiot57sQ" name="api_key_value" prompt="api_key_value?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="api receive timeout value in seconds for tRestClient" internalId="_vwcxUteDEeyFC4jiot57sQ" name="api_receive_timeout" prompt="api_receive_timeout?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_Integer" value="60"/>
+    <contextParameter comment="api type - job or file register or search" internalId="_vwcxU9eDEeyFC4jiot57sQ" name="api_type" prompt="api_type?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="api url" internalId="_vwcxVNeDEeyFC4jiot57sQ" name="api_url" prompt="api_url?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="api authorization token for connection" internalId="_vwcxVdeDEeyFC4jiot57sQ" name="authorization_token" prompt="authorization_token?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="aud_proc - process id" internalId="_vwcxVteDEeyFC4jiot57sQ" name="dw_audt_prcs_typ_id" prompt="dw_audt_prcs_typ_id?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="file status typ id" internalId="_vwcxV9eDEeyFC4jiot57sQ" name="dw_audt_stus_typ_id" prompt="dw_audt_stus_typ_id?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="file data typ id " internalId="_vwcxWNeDEeyFC4jiot57sQ" name="dw_data_typ_id" prompt="dw_data_typ_id?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="aud_proc_id - random generated number" internalId="_vwcxWdeDEeyFC4jiot57sQ" name="dw_file_audt_prcs_id" prompt="dw_file_audt_prcs_id?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="file id" internalId="_vwcxWteDEeyFC4jiot57sQ" name="dw_file_id" prompt="dw_file_id?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value="-1"/>
+    <contextParameter comment="file_name - for file registration" internalId="_vwcxW9eDEeyFC4jiot57sQ" name="dw_file_na" prompt="dw_file_na?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="abac api file state process id" internalId="_vwcxXNeDEeyFC4jiot57sQ" name="dw_file_st_audt_prcs_typ_id" prompt="dw_file_st_audt_prcs_typ_id?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value="0"/>
+    <contextParameter comment="aud_file_proc_id - random generated number" internalId="_vwcxXdeDEeyFC4jiot57sQ" name="dw_file_state_aud_proc_id" prompt="dw_file_state_aud_proc_id?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="file type - xls , psv , csv etc" internalId="_vwcxXteDEeyFC4jiot57sQ" name="dw_file_typ" prompt="dw_file_typ?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="job process id random generated value " internalId="_vwcxX9eDEeyFC4jiot57sQ" name="dw_job_audt_prcs_id" prompt="dw_job_audt_prcs_id?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="job process id" internalId="_vwcxYNeDEeyFC4jiot57sQ" name="dw_job_audt_prcs_typ_id" prompt="dw_job_audt_prcs_typ_id?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="job state execution id" internalId="_vwcxYdeDEeyFC4jiot57sQ" name="dw_job_execution_id" prompt="dw_job_execution_id?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="job id" internalId="_vwcxYteDEeyFC4jiot57sQ" name="dw_job_id" prompt="dw_job_id?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="job name " internalId="_vwcxY9eDEeyFC4jiot57sQ" name="dw_job_na" prompt="dw_job_na?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="job state aud proc unique id " internalId="_vwcxZNeDEeyFC4jiot57sQ" name="dw_job_st_audt_prcs_id" prompt="dw_job_st_audt_prcs_id?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="job state aud process typ id " internalId="_vwcxZdeDEeyFC4jiot57sQ" name="dw_job_st_audt_prcs_typ_id" prompt="dw_job_st_audt_prcs_typ_id?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="job status return code" internalId="_vwcxZteDEeyFC4jiot57sQ" name="dw_job_stus_ret_cd" prompt="dw_job_stus_ret_cd?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="job detail status" internalId="_vwcxZ9eDEeyFC4jiot57sQ" name="dw_job_stus_typ_ds" prompt="dw_job_stus_typ_ds?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value="SUCCESS"/>
+    <contextParameter comment="job status code" internalId="_vwcxaNeDEeyFC4jiot57sQ" name="dw_job_stus_typ_id" prompt="dw_job_stus_typ_id?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="job execution id" internalId="_vwcxadeDEeyFC4jiot57sQ" name="dw_job_xect_id" prompt="dw_job_xect_id?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="job master state audt process id" internalId="_vwcxateDEeyFC4jiot57sQ" name="dw_ma_job_st_audt_prcs_id" prompt="dw_ma_job_st_audt_prcs_id?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="job parent state audt process id" internalId="_vwcxa9eDEeyFC4jiot57sQ" name="dw_pa_job_st_audt_prcs_id" prompt="dw_pa_job_st_audt_prcs_id?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="rendome genereted parent job audt process id  in GM propogates to child jobs" internalId="_vwcxbNeDEeyFC4jiot57sQ" name="dw_parent_job_audt_prcs_id" prompt="dw_parent_job_audt_prcs_id?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="parent job id " internalId="_vwcxbdeDEeyFC4jiot57sQ" name="dw_parent_job_ret_id" prompt="dw_parent_job_ret_id?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="dw_job_xect_id as generated in GM job passed to all jobs" internalId="_vwcxbteDEeyFC4jiot57sQ" name="dw_parent_job_xect_id" prompt="dw_parent_job_xect_id?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="file or job process timestamp" internalId="_vwcxb9eDEeyFC4jiot57sQ" name="dw_prcs_ts" prompt="dw_prcs_ts?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="parent job id " internalId="_vwcxcNeDEeyFC4jiot57sQ" name="dw_pren_job_id" prompt="dw_pren_job_id?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="parent job name" internalId="_vwcxcdeDEeyFC4jiot57sQ" name="dw_pren_job_na" prompt="dw_pren_job_na?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="batch size of file ids to be sent as part of state change" internalId="_vwcxcteDEeyFC4jiot57sQ" name="file_batch_size" prompt="file_batch_size?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_Integer" value="500"/>
+    <contextParameter comment="file status when file processing is failure" internalId="_vwcxc9eDEeyFC4jiot57sQ" name="file_failure_status" prompt="file_failure_status?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value="7"/>
+    <contextParameter comment="file initial status to check on registeration by abac" internalId="_vwcxdNeDEeyFC4jiot57sQ" name="file_initial_status" prompt="file_initial_status?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value="2"/>
+    <contextParameter comment="file path  - s3 path " internalId="_vwcxddeDEeyFC4jiot57sQ" name="file_path_ds" prompt="file_path_ds?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="file status when file is on job server" internalId="_vwcxdteDEeyFC4jiot57sQ" name="file_processing_status" prompt="file_processing_status?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value="4"/>
+    <contextParameter comment="file status when processing started by talend " internalId="_vwcxd9eDEeyFC4jiot57sQ" name="file_ready_status" prompt="file_ready_status?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value="3"/>
+    <contextParameter comment="file status when file is processed successfully" internalId="_vwcxeNeDEeyFC4jiot57sQ" name="file_success_status" prompt="file_success_status?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value="5"/>
+    <contextParameter comment="file status when validated to be loaded" internalId="_vwcxedeDEeyFC4jiot57sQ" name="file_validated_status" prompt="file_validated_status?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value="9"/>
+    <contextParameter comment="list of file id and names" internalId="_vwcxeteDEeyFC4jiot57sQ" name="fileidnalist" prompt="fileidnalist?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="list of files " internalId="_vwcxe9eDEeyFC4jiot57sQ" name="filelist" prompt="filelist?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="S3 bucket for files landing in landing zone bucket" internalId="_vwcxfNeDEeyFC4jiot57sQ" name="GlobalLandingZone" prompt="GlobalLandingZone?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="flag if landing zone job" internalId="_vwcxfdeDEeyFC4jiot57sQ" name="isabaclz" prompt="isabaclz?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="flag if archival of source file needed in post process" internalId="_vwcxfteDEeyFC4jiot57sQ" name="isArchive" prompt="isArchive?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value="Y"/>
+    <contextParameter comment="if Parent job" internalId="_vwcxf9eDEeyFC4jiot57sQ" name="isParent" prompt="isParent?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value="Y"/>
+    <contextParameter comment="flag if post process job" internalId="_vwcxgNeDEeyFC4jiot57sQ" name="ispostprocess" prompt="ispostprocess?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="job process timestamp" internalId="_vwcxgdeDEeyFC4jiot57sQ" name="job_prcs_ts" prompt="job_prcs_ts?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="equivalent of JobGrpId" internalId="_vwcxgteDEeyFC4jiot57sQ" name="JobGrpIdNew" prompt="JobGrpIdNew?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="equivalent of JobRunId" internalId="_vwcxg9eDEeyFC4jiot57sQ" name="JobRunIdNew" prompt="JobRunIdNew?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="output json" internalId="_vwcxhNeDEeyFC4jiot57sQ" name="json_out" prompt="json_out?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="loop counter" internalId="_vwcxhdeDEeyFC4jiot57sQ" name="loopcounter" prompt="loopcounter?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_Integer" value="0"/>
+    <contextParameter comment="json response message" internalId="_vwcxhteDEeyFC4jiot57sQ" name="message" prompt="message?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="metadata of file or job" internalId="_vwcxh9eDEeyFC4jiot57sQ" name="metadata" prompt="metadata?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value="true"/>
+    <contextParameter comment="operation value eq or ne for json request" internalId="_vwcxiNeDEeyFC4jiot57sQ" name="operation_ne" prompt="operation_ne?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="api_request_code -  request type code" internalId="_vwcxideDEeyFC4jiot57sQ" name="request_cd" prompt="request_cd?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="json response status code" internalId="_vwcxiteDEeyFC4jiot57sQ" name="request_status_cd" prompt="request_status_cd?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="json response status code" internalId="_vwcxi9eDEeyFC4jiot57sQ" name="request_status_code" prompt="request_status_code?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="offline result in case of more files to extract json " internalId="_vwcxjNeDEeyFC4jiot57sQ" name="results_offline" prompt="results_offline?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="counter for how many times job will retry for json request" internalId="_vwcxjdeDEeyFC4jiot57sQ" name="retryloop" prompt="retryloop?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_Integer" value="3"/>
+    <contextParameter comment="sleep time to  retry" internalId="_vwcxjteDEeyFC4jiot57sQ" name="retrysleep" prompt="retrysleep?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_Integer" value="5"/>
+    <contextParameter comment="path on job server for intermediate file  processing /app/API" internalId="_vwcxj9eDEeyFC4jiot57sQ" name="Root_Path_API" prompt="Root_Path_API?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="loop counter to check file  on S3" internalId="_vwcxkNeDEeyFC4jiot57sQ" name="s3loopcounter" prompt="s3loopcounter?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_Integer" value="0"/>
+    <contextParameter comment="retry loop counter to check file  on S3" internalId="_vwcxkdeDEeyFC4jiot57sQ" name="s3loopretry" prompt="s3loopretry?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_Integer" value="5"/>
+    <contextParameter comment="sleep time for S3 response to be received offline from API" internalId="_vwcxkteDEeyFC4jiot57sQ" name="s3reponsesleep" prompt="s3reponsesleep?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_Integer" value="40"/>
+    <contextParameter comment="number of days variable to  find file inserted in doc db after currentdate - the days set in" internalId="_vwcxk9eDEeyFC4jiot57sQ" name="set_file_search_days" prompt="set_file_search_days?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_Integer" value="2"/>
+    <contextParameter comment="sleep time  for connecting to S3 before redshift copy begins" internalId="_vwcxlNeDEeyFC4jiot57sQ" name="sleep_time" prompt="sleep_time?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_Integer" value="5"/>
+    <contextParameter comment="sourcesystemcode value for connecting to API" internalId="_vwcxldeDEeyFC4jiot57sQ" name="source_system_cd" prompt="source_system_cd?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="sourcetype code value for connecting to API" internalId="_vwcxlteDEeyFC4jiot57sQ" name="source_type_cd" prompt="source_type_cd?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="state of file or job latest or all" internalId="_vwcxl9eDEeyFC4jiot57sQ" name="state_count" prompt="state_count?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value="1"/>
+    <contextParameter comment="file or job status " internalId="_vwcxmNeDEeyFC4jiot57sQ" name="status" prompt="status?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="json status code " internalId="_vwcxmdeDEeyFC4jiot57sQ" name="status_cd" prompt="status_cd?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="json status code" internalId="_vwcxmteDEeyFC4jiot57sQ" name="status_code" prompt="status_code?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="version_history of file or job " internalId="_vwcxm9eDEeyFC4jiot57sQ" name="version_history" prompt="version_history?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value="0"/>
+    <contextParameter comment="token parameter name as in context db" internalId="_vwd_cNeDEeyFC4jiot57sQ" name="ABaC_API_Token_Param_URL" prompt="ABaC_API_Token_Param_URL?" promptNeeded="false" repositoryContextId="_ue81UMQzEeuLUphvHtcNjQ" type="id_String" value=""/>
+    <contextParameter comment="api_url as in context db" internalId="_vwd_cdeDEeyFC4jiot57sQ" name="ABaC_API_URL" prompt="ABaC_API_URL?" promptNeeded="false" repositoryContextId="_ue81UMQzEeuLUphvHtcNjQ" type="id_String" value=""/>
+    <contextParameter comment="aws_region as in context db" internalId="_vwd_cteDEeyFC4jiot57sQ" name="AWS_Param_Store_Region" prompt="AWS_Param_Store_Region?" promptNeeded="false" repositoryContextId="_ue81UMQzEeuLUphvHtcNjQ" type="id_String" value=""/>
+    <contextParameter comment="define aws region for fetching from AWS parameter store" internalId="_vwd_c9eDEeyFC4jiot57sQ" name="aws_region" prompt="aws_region?" promptNeeded="false" repositoryContextId="_ue81UMQzEeuLUphvHtcNjQ" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_vwd_dNeDEeyFC4jiot57sQ" name="email" prompt="email?" promptNeeded="false" repositoryContextId="_ue81UMQzEeuLUphvHtcNjQ" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_vwd_ddeDEeyFC4jiot57sQ" name="environment" prompt="environment?" promptNeeded="false" repositoryContextId="_ue81UMQzEeuLUphvHtcNjQ" type="id_String" value=""/>
+    <contextParameter comment="dw_data_typ_ids of files being processed" internalId="_vwd_dteDEeyFC4jiot57sQ" name="file_dw_data_typ_id" prompt="file_dw_data_typ_id?" promptNeeded="false" repositoryContextId="_ue81UMQzEeuLUphvHtcNjQ" type="id_String" value=""/>
+    <contextParameter comment="flag if lookup files have to be generated on HDFS also" internalId="_vwd_d9eDEeyFC4jiot57sQ" name="generateHDFSFiles" prompt="generateHDFSFiles?" promptNeeded="false" repositoryContextId="_ue81UMQzEeuLUphvHtcNjQ" type="id_String" value="Y"/>
+    <contextParameter comment="set variable if pre job is successful" internalId="_vwd_eNeDEeyFC4jiot57sQ" name="isprejobsuccess" prompt="isprejobsuccess?" promptNeeded="false" repositoryContextId="_ue81UMQzEeuLUphvHtcNjQ" type="id_String" value=""/>
+    <contextParameter comment="Unique grandmaster id " internalId="_vwd_edeDEeyFC4jiot57sQ" name="ProcessId" prompt="ProcessId?" promptNeeded="false" repositoryContextId="_ue81UMQzEeuLUphvHtcNjQ" type="id_String" value=""/>
+    <contextParameter comment="S3 bucket path for lookup files created by GBL process" internalId="_vwd_eteDEeyFC4jiot57sQ" name="s3gbllookupPath" prompt="s3gbllookupPath?" promptNeeded="false" repositoryContextId="_ue81UMQzEeuLUphvHtcNjQ" type="id_String" value=""/>
+    <contextParameter comment="S3 bucket input path for files" internalId="_vwd_e9eDEeyFC4jiot57sQ" name="s3inputpath" prompt="s3inputpath?" promptNeeded="false" repositoryContextId="_ue81UMQzEeuLUphvHtcNjQ" type="id_String" value=""/>
+    <contextParameter comment="Path on S3 for storing lookup files" internalId="_vwd_fNeDEeyFC4jiot57sQ" name="s3lookupPath" prompt="s3lookupPath?" promptNeeded="false" repositoryContextId="_ue81UMQzEeuLUphvHtcNjQ" type="id_String" value=""/>
+    <contextParameter comment="Folder on S3  where offline resut willbe stored" internalId="_vwd_fdeDEeyFC4jiot57sQ" name="s3offlinefolder" prompt="s3offlinefolder?" promptNeeded="false" repositoryContextId="_ue81UMQzEeuLUphvHtcNjQ" type="id_String" value="offline_results"/>
+    <contextParameter comment="Get API offline result on S3" internalId="_vwd_fteDEeyFC4jiot57sQ" name="s3offlineresult" prompt="s3offlineresult?" promptNeeded="false" repositoryContextId="_ue81UMQzEeuLUphvHtcNjQ" type="id_String" value="N"/>
+    <contextParameter comment="S3 bucket static path for files" internalId="_vwd_f9eDEeyFC4jiot57sQ" name="s3staticpath" prompt="s3staticpath?" promptNeeded="false" repositoryContextId="_ue81UMQzEeuLUphvHtcNjQ" type="id_String" value=""/>
+    <contextParameter comment="Send mail SMTP address" internalId="_vwd_gNeDEeyFC4jiot57sQ" name="Talend_SMTP_Fromaddress" prompt="Talend_SMTP_Fromaddress?" promptNeeded="false" repositoryContextId="_ue81UMQzEeuLUphvHtcNjQ" type="id_String" value=""/>
+    <contextParameter comment="Send mail SMTP host" internalId="_vwd_gdeDEeyFC4jiot57sQ" name="Talend_SMTP_Host" prompt="Talend_SMTP_Host?" promptNeeded="false" repositoryContextId="_ue81UMQzEeuLUphvHtcNjQ" type="id_String" value=""/>
+    <contextParameter comment="Send Mail SMTP port" internalId="_vwd_gteDEeyFC4jiot57sQ" name="Talend_SMTP_Port" prompt="Talend_SMTP_Port?" promptNeeded="false" repositoryContextId="_ue81UMQzEeuLUphvHtcNjQ" type="id_String" value=""/>
+    <contextParameter comment="Generic Token name string for all systems" internalId="_vwd_g9eDEeyFC4jiot57sQ" name="token_parameter_name" prompt="token_parameter_name?" promptNeeded="false" repositoryContextId="_ue81UMQzEeuLUphvHtcNjQ" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_vwfNkNeDEeyFC4jiot57sQ" name="Redshift_gdap_AdditionalParams" prompt="Redshift_gdap_AdditionalParams?" promptNeeded="false" repositoryContextId="_oeeZMP3VEeasOf6-zCyBHg" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_vwfNkdeDEeyFC4jiot57sQ" name="Redshift_gdap_Database" prompt="Redshift_gdap_Database?" promptNeeded="false" repositoryContextId="_oeeZMP3VEeasOf6-zCyBHg" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_vwfNkteDEeyFC4jiot57sQ" name="Redshift_gdap_IAM_Role" prompt="Redshift_gdap_IAM_Role?" promptNeeded="false" repositoryContextId="_oeeZMP3VEeasOf6-zCyBHg" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_vwfNk9eDEeyFC4jiot57sQ" name="Redshift_gdap_Login" prompt="Redshift_gdap_Login?" promptNeeded="false" repositoryContextId="_oeeZMP3VEeasOf6-zCyBHg" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_vwfNlNeDEeyFC4jiot57sQ" name="Redshift_gdap_Password" prompt="Redshift_gdap_Password?" promptNeeded="false" repositoryContextId="_oeeZMP3VEeasOf6-zCyBHg" type="id_Password" value=""/>
+    <contextParameter comment="" internalId="_vwfNldeDEeyFC4jiot57sQ" name="Redshift_gdap_Port" prompt="Redshift_gdap_Port?" promptNeeded="false" repositoryContextId="_oeeZMP3VEeasOf6-zCyBHg" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_vwfNlteDEeyFC4jiot57sQ" name="Redshift_gdap_Schema" prompt="Redshift_gdap_Schema?" promptNeeded="false" repositoryContextId="_oeeZMP3VEeasOf6-zCyBHg" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_vwfNl9eDEeyFC4jiot57sQ" name="Redshift_gdap_Server" prompt="Redshift_gdap_Server?" promptNeeded="false" repositoryContextId="_oeeZMP3VEeasOf6-zCyBHg" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_vwfNmNeDEeyFC4jiot57sQ" name="Redshift_gdap_Stage" prompt="Redshift_gdap_Stage?" promptNeeded="false" repositoryContextId="_oeeZMP3VEeasOf6-zCyBHg" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_vwfNmdeDEeyFC4jiot57sQ" name="Redshift_gdap_Utility" prompt="Redshift_gdap_Utility?" promptNeeded="false" repositoryContextId="_oeeZMP3VEeasOf6-zCyBHg" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_vwfNmteDEeyFC4jiot57sQ" name="Redshift_gdap_Views" prompt="Redshift_gdap_Views?" promptNeeded="false" repositoryContextId="_oeeZMP3VEeasOf6-zCyBHg" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_vwhCwNeDEeyFC4jiot57sQ" name="Globaldatalake_Access_Key_Id" prompt="Globaldatalake_Access_Key_Id?" promptNeeded="false" repositoryContextId="_ZCGpEAAKEeecKdOhbMdEgA" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_vwhCwdeDEeyFC4jiot57sQ" name="Globaldatalake_Bucket_name" prompt="Globaldatalake_Bucket_name?" promptNeeded="false" repositoryContextId="_ZCGpEAAKEeecKdOhbMdEgA" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_vwhCwteDEeyFC4jiot57sQ" name="Globaldatalake_Date" prompt="Globaldatalake_Date?" promptNeeded="false" repositoryContextId="_ZCGpEAAKEeecKdOhbMdEgA" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_vwhCw9eDEeyFC4jiot57sQ" name="Globaldatalake_Path" prompt="Globaldatalake_Path?" promptNeeded="false" repositoryContextId="_ZCGpEAAKEeecKdOhbMdEgA" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_vwhCxNeDEeyFC4jiot57sQ" name="Globaldatalake_Secret_Access_Key" prompt="Globaldatalake_Secret_Access_Key?" promptNeeded="false" repositoryContextId="_ZCGpEAAKEeecKdOhbMdEgA" type="id_Password" value=""/>
+    <contextParameter comment="" internalId="_vwhCxdeDEeyFC4jiot57sQ" name="Globaldatalake_Stage_Path" prompt="Globaldatalake_Stage_Path?" promptNeeded="false" repositoryContextId="_ZCGpEAAKEeecKdOhbMdEgA" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_vwhCxteDEeyFC4jiot57sQ" name="Globaldatalake_SubjectArea" prompt="Globaldatalake_SubjectArea?" promptNeeded="false" repositoryContextId="_ZCGpEAAKEeecKdOhbMdEgA" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_vwhCx9eDEeyFC4jiot57sQ" name="Globaldatalake_Terr" prompt="Globaldatalake_Terr?" promptNeeded="false" repositoryContextId="_ZCGpEAAKEeecKdOhbMdEgA" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_vwhCyNeDEeyFC4jiot57sQ" name="Globaloutbound_Access_Key_Id" prompt="Globaloutbound_Access_Key_Id?" promptNeeded="false" repositoryContextId="_ZCGpEAAKEeecKdOhbMdEgA" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_vwhCydeDEeyFC4jiot57sQ" name="Globaloutbound_Bucket_Name" prompt="Globaloutbound_Bucket_Name?" promptNeeded="false" repositoryContextId="_ZCGpEAAKEeecKdOhbMdEgA" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_vwhCyteDEeyFC4jiot57sQ" name="Globaloutbound_Date" prompt="Globaloutbound_Date?" promptNeeded="false" repositoryContextId="_ZCGpEAAKEeecKdOhbMdEgA" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_vwhCy9eDEeyFC4jiot57sQ" name="Globaloutbound_Path" prompt="Globaloutbound_Path?" promptNeeded="false" repositoryContextId="_ZCGpEAAKEeecKdOhbMdEgA" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_vwhCzNeDEeyFC4jiot57sQ" name="Globaloutbound_Secret_Access_Key" prompt="Globaloutbound_Secret_Access_Key?" promptNeeded="false" repositoryContextId="_ZCGpEAAKEeecKdOhbMdEgA" type="id_Password" value=""/>
+    <contextParameter comment="" internalId="_vwhCzdeDEeyFC4jiot57sQ" name="Globaloutbound_SubjectArea" prompt="Globaloutbound_SubjectArea?" promptNeeded="false" repositoryContextId="_ZCGpEAAKEeecKdOhbMdEgA" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_vwhCzteDEeyFC4jiot57sQ" name="Globaloutbound_Terr" prompt="Globaloutbound_Terr?" promptNeeded="false" repositoryContextId="_ZCGpEAAKEeecKdOhbMdEgA" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_vwhCz9eDEeyFC4jiot57sQ" name="Globalraw_Access_Key_Id" prompt="Globalraw_Access_Key_Id?" promptNeeded="false" repositoryContextId="_ZCGpEAAKEeecKdOhbMdEgA" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_vwhC0NeDEeyFC4jiot57sQ" name="Globalraw_Archive_Path" prompt="Globalraw_Archive_Path?" promptNeeded="false" repositoryContextId="_ZCGpEAAKEeecKdOhbMdEgA" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_vwhC0deDEeyFC4jiot57sQ" name="Globalraw_Archive_Subject" prompt="Globalraw_Archive_Subject?" promptNeeded="false" repositoryContextId="_ZCGpEAAKEeecKdOhbMdEgA" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_vwhC0teDEeyFC4jiot57sQ" name="Globalraw_Bucket_Name" prompt="Globalraw_Bucket_Name?" promptNeeded="false" repositoryContextId="_ZCGpEAAKEeecKdOhbMdEgA" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_vwhC09eDEeyFC4jiot57sQ" name="Globalraw_Date" prompt="Globalraw_Date?" promptNeeded="false" repositoryContextId="_ZCGpEAAKEeecKdOhbMdEgA" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_vwhC1NeDEeyFC4jiot57sQ" name="Globalraw_Path" prompt="Globalraw_Path?" promptNeeded="false" repositoryContextId="_ZCGpEAAKEeecKdOhbMdEgA" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_vwhC1deDEeyFC4jiot57sQ" name="Globalraw_Secret_Access_Key" prompt="Globalraw_Secret_Access_Key?" promptNeeded="false" repositoryContextId="_ZCGpEAAKEeecKdOhbMdEgA" type="id_Password" value=""/>
+    <contextParameter comment="" internalId="_vwhC1teDEeyFC4jiot57sQ" name="Globalraw_SubjectArea" prompt="Globalraw_SubjectArea?" promptNeeded="false" repositoryContextId="_ZCGpEAAKEeecKdOhbMdEgA" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_vwhC19eDEeyFC4jiot57sQ" name="Globalraw_Terr" prompt="Globalraw_Terr?" promptNeeded="false" repositoryContextId="_ZCGpEAAKEeecKdOhbMdEgA" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_vwhC2NeDEeyFC4jiot57sQ" name="S3_Bucket_GDAP_archive" prompt="S3_Bucket_GDAP_archive?" promptNeeded="false" repositoryContextId="_ZCGpEAAKEeecKdOhbMdEgA" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_vwhC2deDEeyFC4jiot57sQ" name="S3_Bucket_GDAP_lookups" prompt="S3_Bucket_GDAP_lookups?" promptNeeded="false" repositoryContextId="_ZCGpEAAKEeecKdOhbMdEgA" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_vwhC2teDEeyFC4jiot57sQ" name="S3_Bucket_GDAP_rejects" prompt="S3_Bucket_GDAP_rejects?" promptNeeded="false" repositoryContextId="_ZCGpEAAKEeecKdOhbMdEgA" type="id_String" value=""/>
+  </context>
+  <context confirmationNeeded="false" name="Production">
+    <contextParameter comment="" internalId="_vwhp0NeDEeyFC4jiot57sQ" name="DwDataTypId" prompt="DwDataTypId?" promptNeeded="false" repositoryContextId="_p1z2c1m6Ee26dcjpa3ATew" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_vwhp0deDEeyFC4jiot57sQ" name="ErrMsg" prompt="ErrMsg?" promptNeeded="false" repositoryContextId="_p1z2c1m6Ee26dcjpa3ATew" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_vwhp0teDEeyFC4jiot57sQ" name="GrandMasterName" prompt="GrandMasterName?" promptNeeded="false" repositoryContextId="_p1z2c1m6Ee26dcjpa3ATew" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_vwhp09eDEeyFC4jiot57sQ" name="IsJobMaster" prompt="IsJobMaster?" promptNeeded="false" repositoryContextId="_p1z2c1m6Ee26dcjpa3ATew" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_vwhp1NeDEeyFC4jiot57sQ" name="JobGrpId" prompt="JobGrpId?" promptNeeded="false" repositoryContextId="_p1z2c1m6Ee26dcjpa3ATew" type="id_Long" value="-1"/>
+    <contextParameter comment="" internalId="_vwhp1deDEeyFC4jiot57sQ" name="JobLogId" prompt="JobLogId?" promptNeeded="false" repositoryContextId="_p1z2c1m6Ee26dcjpa3ATew" type="id_Long" value=""/>
+    <contextParameter comment="" internalId="_vwhp1teDEeyFC4jiot57sQ" name="JobMasterName" prompt="JobMasterName?" promptNeeded="false" repositoryContextId="_p1z2c1m6Ee26dcjpa3ATew" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_vwhp19eDEeyFC4jiot57sQ" name="JobName" prompt="JobName?" promptNeeded="false" repositoryContextId="_p1z2c1m6Ee26dcjpa3ATew" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_vwhp2NeDEeyFC4jiot57sQ" name="JobRejObj" prompt="JobRejObj?" promptNeeded="false" repositoryContextId="_p1z2c1m6Ee26dcjpa3ATew" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_vwhp2deDEeyFC4jiot57sQ" name="JobRunId" prompt="JobRunId?" promptNeeded="false" repositoryContextId="_p1z2c1m6Ee26dcjpa3ATew" type="id_Long" value="-1"/>
+    <contextParameter comment="" internalId="_vwhp2teDEeyFC4jiot57sQ" name="JobSrcObj" prompt="JobSrcObj?" promptNeeded="false" repositoryContextId="_p1z2c1m6Ee26dcjpa3ATew" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_vwhp29eDEeyFC4jiot57sQ" name="JobStatus" prompt="JobStatus?" promptNeeded="false" repositoryContextId="_p1z2c1m6Ee26dcjpa3ATew" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_vwhp3NeDEeyFC4jiot57sQ" name="JobTgtObj" prompt="JobTgtObj?" promptNeeded="false" repositoryContextId="_p1z2c1m6Ee26dcjpa3ATew" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_vwhp3deDEeyFC4jiot57sQ" name="RejRowCnt" prompt="RejRowCnt?" promptNeeded="false" repositoryContextId="_p1z2c1m6Ee26dcjpa3ATew" type="id_Integer" value=""/>
+    <contextParameter comment="" internalId="_vwhp3teDEeyFC4jiot57sQ" name="SendEmailFlg" prompt="SendEmailFlg?" promptNeeded="false" repositoryContextId="_p1z2c1m6Ee26dcjpa3ATew" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_vwhp39eDEeyFC4jiot57sQ" name="SrcRowCnt" prompt="SrcRowCnt?" promptNeeded="false" repositoryContextId="_p1z2c1m6Ee26dcjpa3ATew" type="id_Integer" value=""/>
+    <contextParameter comment="" internalId="_vwhp4NeDEeyFC4jiot57sQ" name="StaticFileName" prompt="StaticFileName?" promptNeeded="false" repositoryContextId="_p1z2c1m6Ee26dcjpa3ATew" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_vwhp4deDEeyFC4jiot57sQ" name="Subject_Area" prompt="Subject_Area?" promptNeeded="false" repositoryContextId="_p1z2c1m6Ee26dcjpa3ATew" type="id_String" value=""/>
+    <contextParameter comment="    " internalId="_vwhp4teDEeyFC4jiot57sQ" name="SubjId" prompt="SubjId?" promptNeeded="false" repositoryContextId="_p1z2c1m6Ee26dcjpa3ATew" type="id_Long" value=""/>
+    <contextParameter comment="" internalId="_vwhp49eDEeyFC4jiot57sQ" name="TgtDS" prompt="TgtDS?" promptNeeded="false" repositoryContextId="_p1z2c1m6Ee26dcjpa3ATew" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_vwhp5NeDEeyFC4jiot57sQ" name="TgtFlg" prompt="TgtFlg?" promptNeeded="false" repositoryContextId="_p1z2c1m6Ee26dcjpa3ATew" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_vwhp5deDEeyFC4jiot57sQ" name="TgtRowCnt" prompt="TgtRowCnt?" promptNeeded="false" repositoryContextId="_p1z2c1m6Ee26dcjpa3ATew" type="id_Integer" value=""/>
+    <contextParameter comment="" internalId="_vwhp5teDEeyFC4jiot57sQ" name="TgtSeqNo" prompt="TgtSeqNo?" promptNeeded="false" repositoryContextId="_p1z2c1m6Ee26dcjpa3ATew" type="id_Short" value=""/>
+    <contextParameter comment="api connection timeout value in seconds for tRestClient" internalId="_vwhp59eDEeyFC4jiot57sQ" name="api_connection_timeout" prompt="api_connection_timeout?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_Integer" value="60"/>
+    <contextParameter comment="key value for authorization to connect to api" internalId="_vwhp6NeDEeyFC4jiot57sQ" name="api_key_value" prompt="api_key_value?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="api receive timeout value in seconds for tRestClient" internalId="_vwhp6deDEeyFC4jiot57sQ" name="api_receive_timeout" prompt="api_receive_timeout?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_Integer" value="60"/>
+    <contextParameter comment="api type - job or file register or search" internalId="_vwhp6teDEeyFC4jiot57sQ" name="api_type" prompt="api_type?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="api url" internalId="_vwhp69eDEeyFC4jiot57sQ" name="api_url" prompt="api_url?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="api authorization token for connection" internalId="_vwhp7NeDEeyFC4jiot57sQ" name="authorization_token" prompt="authorization_token?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="aud_proc - process id" internalId="_vwhp7deDEeyFC4jiot57sQ" name="dw_audt_prcs_typ_id" prompt="dw_audt_prcs_typ_id?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="file status typ id" internalId="_vwhp7teDEeyFC4jiot57sQ" name="dw_audt_stus_typ_id" prompt="dw_audt_stus_typ_id?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="file data typ id " internalId="_vwhp79eDEeyFC4jiot57sQ" name="dw_data_typ_id" prompt="dw_data_typ_id?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="aud_proc_id - random generated number" internalId="_vwhp8NeDEeyFC4jiot57sQ" name="dw_file_audt_prcs_id" prompt="dw_file_audt_prcs_id?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="file id" internalId="_vwhp8deDEeyFC4jiot57sQ" name="dw_file_id" prompt="dw_file_id?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value="-1"/>
+    <contextParameter comment="file_name - for file registration" internalId="_vwhp8teDEeyFC4jiot57sQ" name="dw_file_na" prompt="dw_file_na?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="abac api file state process id" internalId="_vwhp89eDEeyFC4jiot57sQ" name="dw_file_st_audt_prcs_typ_id" prompt="dw_file_st_audt_prcs_typ_id?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="aud_file_proc_id - random generated number" internalId="_vwhp9NeDEeyFC4jiot57sQ" name="dw_file_state_aud_proc_id" prompt="dw_file_state_aud_proc_id?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="file type - xls , psv , csv etc" internalId="_vwhp9deDEeyFC4jiot57sQ" name="dw_file_typ" prompt="dw_file_typ?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="job process id random generated value " internalId="_vwhp9teDEeyFC4jiot57sQ" name="dw_job_audt_prcs_id" prompt="dw_job_audt_prcs_id?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="job process id" internalId="_vwhp99eDEeyFC4jiot57sQ" name="dw_job_audt_prcs_typ_id" prompt="dw_job_audt_prcs_typ_id?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value="11"/>
+    <contextParameter comment="job state execution id" internalId="_vwhp-NeDEeyFC4jiot57sQ" name="dw_job_execution_id" prompt="dw_job_execution_id?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="job id" internalId="_vwhp-deDEeyFC4jiot57sQ" name="dw_job_id" prompt="dw_job_id?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="job name " internalId="_vwhp-teDEeyFC4jiot57sQ" name="dw_job_na" prompt="dw_job_na?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="job state aud proc unique id " internalId="_vwhp-9eDEeyFC4jiot57sQ" name="dw_job_st_audt_prcs_id" prompt="dw_job_st_audt_prcs_id?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="job state aud process typ id " internalId="_vwhp_NeDEeyFC4jiot57sQ" name="dw_job_st_audt_prcs_typ_id" prompt="dw_job_st_audt_prcs_typ_id?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="job status return code" internalId="_vwhp_deDEeyFC4jiot57sQ" name="dw_job_stus_ret_cd" prompt="dw_job_stus_ret_cd?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="job detail status" internalId="_vwhp_teDEeyFC4jiot57sQ" name="dw_job_stus_typ_ds" prompt="dw_job_stus_typ_ds?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value="SUCCESS"/>
+    <contextParameter comment="job status code" internalId="_vwhp_9eDEeyFC4jiot57sQ" name="dw_job_stus_typ_id" prompt="dw_job_stus_typ_id?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value="1"/>
+    <contextParameter comment="job execution id" internalId="_vwhqANeDEeyFC4jiot57sQ" name="dw_job_xect_id" prompt="dw_job_xect_id?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="job master state audt process id" internalId="_vwhqAdeDEeyFC4jiot57sQ" name="dw_ma_job_st_audt_prcs_id" prompt="dw_ma_job_st_audt_prcs_id?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="job parent state audt process id" internalId="_vwhqAteDEeyFC4jiot57sQ" name="dw_pa_job_st_audt_prcs_id" prompt="dw_pa_job_st_audt_prcs_id?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="rendome genereted parent job audt process id  in GM propogates to child jobs" internalId="_vwhqA9eDEeyFC4jiot57sQ" name="dw_parent_job_audt_prcs_id" prompt="dw_parent_job_audt_prcs_id?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="parent job id " internalId="_vwhqBNeDEeyFC4jiot57sQ" name="dw_parent_job_ret_id" prompt="dw_parent_job_ret_id?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="dw_job_xect_id as generated in GM job passed to all jobs" internalId="_vwhqBdeDEeyFC4jiot57sQ" name="dw_parent_job_xect_id" prompt="dw_parent_job_xect_id?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="file or job process timestamp" internalId="_vwhqBteDEeyFC4jiot57sQ" name="dw_prcs_ts" prompt="dw_prcs_ts?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="parent job id " internalId="_vwhqB9eDEeyFC4jiot57sQ" name="dw_pren_job_id" prompt="dw_pren_job_id?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="parent job name" internalId="_vwhqCNeDEeyFC4jiot57sQ" name="dw_pren_job_na" prompt="dw_pren_job_na?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="batch size of file ids to be sent as part of state change" internalId="_vwhqCdeDEeyFC4jiot57sQ" name="file_batch_size" prompt="file_batch_size?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_Integer" value="500"/>
+    <contextParameter comment="file status when file processing is failure" internalId="_vwhqCteDEeyFC4jiot57sQ" name="file_failure_status" prompt="file_failure_status?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value="7"/>
+    <contextParameter comment="file initial status to check on registeration by abac" internalId="_vwhqC9eDEeyFC4jiot57sQ" name="file_initial_status" prompt="file_initial_status?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value="2"/>
+    <contextParameter comment="file path  - s3 path " internalId="_vwhqDNeDEeyFC4jiot57sQ" name="file_path_ds" prompt="file_path_ds?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="file status when file is on job server" internalId="_vwhqDdeDEeyFC4jiot57sQ" name="file_processing_status" prompt="file_processing_status?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value="4"/>
+    <contextParameter comment="file status when processing started by talend " internalId="_vwhqDteDEeyFC4jiot57sQ" name="file_ready_status" prompt="file_ready_status?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value="3"/>
+    <contextParameter comment="file status when file is processed successfully" internalId="_vwhqD9eDEeyFC4jiot57sQ" name="file_success_status" prompt="file_success_status?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value="5"/>
+    <contextParameter comment="file status when validated to be loaded" internalId="_vwhqENeDEeyFC4jiot57sQ" name="file_validated_status" prompt="file_validated_status?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value="9"/>
+    <contextParameter comment="list of file id and names" internalId="_vwhqEdeDEeyFC4jiot57sQ" name="fileidnalist" prompt="fileidnalist?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="list of files " internalId="_vwhqEteDEeyFC4jiot57sQ" name="filelist" prompt="filelist?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="S3 bucket for files landing in landing zone bucket" internalId="_vwhqE9eDEeyFC4jiot57sQ" name="GlobalLandingZone" prompt="GlobalLandingZone?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="flag if landing zone job" internalId="_vwhqFNeDEeyFC4jiot57sQ" name="isabaclz" prompt="isabaclz?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="flag if archival of source file needed in post process" internalId="_vwhqFdeDEeyFC4jiot57sQ" name="isArchive" prompt="isArchive?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="if Parent job" internalId="_vwhqFteDEeyFC4jiot57sQ" name="isParent" prompt="isParent?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value="Y"/>
+    <contextParameter comment="flag if post process job" internalId="_vwhqF9eDEeyFC4jiot57sQ" name="ispostprocess" prompt="ispostprocess?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="job process timestamp" internalId="_vwhqGNeDEeyFC4jiot57sQ" name="job_prcs_ts" prompt="job_prcs_ts?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="equivalent of JobGrpId" internalId="_vwhqGdeDEeyFC4jiot57sQ" name="JobGrpIdNew" prompt="JobGrpIdNew?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="equivalent of JobRunId" internalId="_vwhqGteDEeyFC4jiot57sQ" name="JobRunIdNew" prompt="JobRunIdNew?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="output json" internalId="_vwhqG9eDEeyFC4jiot57sQ" name="json_out" prompt="json_out?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="loop counter" internalId="_vwhqHNeDEeyFC4jiot57sQ" name="loopcounter" prompt="loopcounter?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_Integer" value="0"/>
+    <contextParameter comment="json response message" internalId="_vwhqHdeDEeyFC4jiot57sQ" name="message" prompt="message?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="metadata of file or job" internalId="_vwhqHteDEeyFC4jiot57sQ" name="metadata" prompt="metadata?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value="true"/>
+    <contextParameter comment="operation value eq or ne for json request" internalId="_vwhqH9eDEeyFC4jiot57sQ" name="operation_ne" prompt="operation_ne?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="api_request_code -  request type code" internalId="_vwhqINeDEeyFC4jiot57sQ" name="request_cd" prompt="request_cd?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="json response status code" internalId="_vwhqIdeDEeyFC4jiot57sQ" name="request_status_cd" prompt="request_status_cd?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="json response status code" internalId="_vwhqIteDEeyFC4jiot57sQ" name="request_status_code" prompt="request_status_code?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="offline result in case of more files to extract json " internalId="_vwhqI9eDEeyFC4jiot57sQ" name="results_offline" prompt="results_offline?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="counter for how many times job will retry for json request" internalId="_vwhqJNeDEeyFC4jiot57sQ" name="retryloop" prompt="retryloop?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_Integer" value="3"/>
+    <contextParameter comment="sleep time to  retry" internalId="_vwhqJdeDEeyFC4jiot57sQ" name="retrysleep" prompt="retrysleep?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_Integer" value="5"/>
+    <contextParameter comment="path on job server for intermediate file  processing /app/API" internalId="_vwhqJteDEeyFC4jiot57sQ" name="Root_Path_API" prompt="Root_Path_API?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="loop counter to check file  on S3" internalId="_vwhqJ9eDEeyFC4jiot57sQ" name="s3loopcounter" prompt="s3loopcounter?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_Integer" value="0"/>
+    <contextParameter comment="retry loop counter to check file  on S3" internalId="_vwhqKNeDEeyFC4jiot57sQ" name="s3loopretry" prompt="s3loopretry?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_Integer" value="5"/>
+    <contextParameter comment="sleep time for S3 response to be received offline from API" internalId="_vwhqKdeDEeyFC4jiot57sQ" name="s3reponsesleep" prompt="s3reponsesleep?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_Integer" value="40"/>
+    <contextParameter comment="number of days variable to  find file inserted in doc db after currentdate - the days set in" internalId="_vwhqKteDEeyFC4jiot57sQ" name="set_file_search_days" prompt="set_file_search_days?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_Integer" value=""/>
+    <contextParameter comment="sleep time  for connecting to S3 before redshift copy begins" internalId="_vwhqK9eDEeyFC4jiot57sQ" name="sleep_time" prompt="sleep_time?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_Integer" value=""/>
+    <contextParameter comment="sourcesystemcode value for connecting to API" internalId="_vwhqLNeDEeyFC4jiot57sQ" name="source_system_cd" prompt="source_system_cd?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="sourcetype code value for connecting to API" internalId="_vwhqLdeDEeyFC4jiot57sQ" name="source_type_cd" prompt="source_type_cd?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="state of file or job latest or all" internalId="_vwhqLteDEeyFC4jiot57sQ" name="state_count" prompt="state_count?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value="1"/>
+    <contextParameter comment="file or job status " internalId="_vwhqL9eDEeyFC4jiot57sQ" name="status" prompt="status?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="json status code " internalId="_vwhqMNeDEeyFC4jiot57sQ" name="status_cd" prompt="status_cd?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="json status code" internalId="_vwhqMdeDEeyFC4jiot57sQ" name="status_code" prompt="status_code?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="version_history of file or job " internalId="_vwhqMteDEeyFC4jiot57sQ" name="version_history" prompt="version_history?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value="0"/>
+    <contextParameter comment="token parameter name as in context db" internalId="_vwhqM9eDEeyFC4jiot57sQ" name="ABaC_API_Token_Param_URL" prompt="ABaC_API_Token_Param_URL?" promptNeeded="false" repositoryContextId="_ue81UMQzEeuLUphvHtcNjQ" type="id_String" value=""/>
+    <contextParameter comment="api_url as in context db" internalId="_vwhqNNeDEeyFC4jiot57sQ" name="ABaC_API_URL" prompt="ABaC_API_URL?" promptNeeded="false" repositoryContextId="_ue81UMQzEeuLUphvHtcNjQ" type="id_String" value=""/>
+    <contextParameter comment="aws_region as in context db" internalId="_vwhqNdeDEeyFC4jiot57sQ" name="AWS_Param_Store_Region" prompt="AWS_Param_Store_Region?" promptNeeded="false" repositoryContextId="_ue81UMQzEeuLUphvHtcNjQ" type="id_String" value=""/>
+    <contextParameter comment="define aws region for fetching from AWS parameter store" internalId="_vwhqNteDEeyFC4jiot57sQ" name="aws_region" prompt="aws_region?" promptNeeded="false" repositoryContextId="_ue81UMQzEeuLUphvHtcNjQ" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_vwhqN9eDEeyFC4jiot57sQ" name="email" prompt="email?" promptNeeded="false" repositoryContextId="_ue81UMQzEeuLUphvHtcNjQ" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_vwhqONeDEeyFC4jiot57sQ" name="environment" prompt="environment?" promptNeeded="false" repositoryContextId="_ue81UMQzEeuLUphvHtcNjQ" type="id_String" value=""/>
+    <contextParameter comment="dw_data_typ_ids of files being processed" internalId="_vwhqOdeDEeyFC4jiot57sQ" name="file_dw_data_typ_id" prompt="file_dw_data_typ_id?" promptNeeded="false" repositoryContextId="_ue81UMQzEeuLUphvHtcNjQ" type="id_String" value=""/>
+    <contextParameter comment="flag if lookup files have to be generated on HDFS also" internalId="_vwhqOteDEeyFC4jiot57sQ" name="generateHDFSFiles" prompt="generateHDFSFiles?" promptNeeded="false" repositoryContextId="_ue81UMQzEeuLUphvHtcNjQ" type="id_String" value=""/>
+    <contextParameter comment="set variable if pre job is successful" internalId="_vwhqO9eDEeyFC4jiot57sQ" name="isprejobsuccess" prompt="isprejobsuccess?" promptNeeded="false" repositoryContextId="_ue81UMQzEeuLUphvHtcNjQ" type="id_String" value=""/>
+    <contextParameter comment="Unique grandmaster id " internalId="_vwhqPNeDEeyFC4jiot57sQ" name="ProcessId" prompt="ProcessId?" promptNeeded="false" repositoryContextId="_ue81UMQzEeuLUphvHtcNjQ" type="id_String" value=""/>
+    <contextParameter comment="S3 bucket path for lookup files created by GBL process" internalId="_vwhqPdeDEeyFC4jiot57sQ" name="s3gbllookupPath" prompt="s3gbllookupPath?" promptNeeded="false" repositoryContextId="_ue81UMQzEeuLUphvHtcNjQ" type="id_String" value=""/>
+    <contextParameter comment="S3 bucket input path for files" internalId="_vwhqPteDEeyFC4jiot57sQ" name="s3inputpath" prompt="s3inputpath?" promptNeeded="false" repositoryContextId="_ue81UMQzEeuLUphvHtcNjQ" type="id_String" value=""/>
+    <contextParameter comment="Path on S3 for storing lookup files" internalId="_vwhqP9eDEeyFC4jiot57sQ" name="s3lookupPath" prompt="s3lookupPath?" promptNeeded="false" repositoryContextId="_ue81UMQzEeuLUphvHtcNjQ" type="id_String" value=""/>
+    <contextParameter comment="Folder on S3  where offline resut willbe stored" internalId="_vwhqQNeDEeyFC4jiot57sQ" name="s3offlinefolder" prompt="s3offlinefolder?" promptNeeded="false" repositoryContextId="_ue81UMQzEeuLUphvHtcNjQ" type="id_String" value="offline_results"/>
+    <contextParameter comment="Get API offline result on S3" internalId="_vwhqQdeDEeyFC4jiot57sQ" name="s3offlineresult" prompt="s3offlineresult?" promptNeeded="false" repositoryContextId="_ue81UMQzEeuLUphvHtcNjQ" type="id_String" value="N"/>
+    <contextParameter comment="S3 bucket static path for files" internalId="_vwhqQteDEeyFC4jiot57sQ" name="s3staticpath" prompt="s3staticpath?" promptNeeded="false" repositoryContextId="_ue81UMQzEeuLUphvHtcNjQ" type="id_String" value=""/>
+    <contextParameter comment="Send mail SMTP address" internalId="_vwhqQ9eDEeyFC4jiot57sQ" name="Talend_SMTP_Fromaddress" prompt="Talend_SMTP_Fromaddress?" promptNeeded="false" repositoryContextId="_ue81UMQzEeuLUphvHtcNjQ" type="id_String" value=""/>
+    <contextParameter comment="Send mail SMTP host" internalId="_vwhqRNeDEeyFC4jiot57sQ" name="Talend_SMTP_Host" prompt="Talend_SMTP_Host?" promptNeeded="false" repositoryContextId="_ue81UMQzEeuLUphvHtcNjQ" type="id_String" value=""/>
+    <contextParameter comment="Send Mail SMTP port" internalId="_vwhqRdeDEeyFC4jiot57sQ" name="Talend_SMTP_Port" prompt="Talend_SMTP_Port?" promptNeeded="false" repositoryContextId="_ue81UMQzEeuLUphvHtcNjQ" type="id_String" value=""/>
+    <contextParameter comment="Generic Token name string for all systems" internalId="_vwhqRteDEeyFC4jiot57sQ" name="token_parameter_name" prompt="token_parameter_name?" promptNeeded="false" repositoryContextId="_ue81UMQzEeuLUphvHtcNjQ" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_vwhqR9eDEeyFC4jiot57sQ" name="Redshift_gdap_AdditionalParams" prompt="Redshift_gdap_AdditionalParams?" promptNeeded="false" repositoryContextId="_oeeZMP3VEeasOf6-zCyBHg" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_vwhqSNeDEeyFC4jiot57sQ" name="Redshift_gdap_Database" prompt="Redshift_gdap_Database?" promptNeeded="false" repositoryContextId="_oeeZMP3VEeasOf6-zCyBHg" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_vwhqSdeDEeyFC4jiot57sQ" name="Redshift_gdap_IAM_Role" prompt="Redshift_gdap_IAM_Role?" promptNeeded="false" repositoryContextId="_oeeZMP3VEeasOf6-zCyBHg" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_vwhqSteDEeyFC4jiot57sQ" name="Redshift_gdap_Login" prompt="Redshift_gdap_Login?" promptNeeded="false" repositoryContextId="_oeeZMP3VEeasOf6-zCyBHg" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_vwhqS9eDEeyFC4jiot57sQ" name="Redshift_gdap_Password" prompt="Redshift_gdap_Password?" promptNeeded="false" repositoryContextId="_oeeZMP3VEeasOf6-zCyBHg" type="id_Password" value=""/>
+    <contextParameter comment="" internalId="_vwhqTNeDEeyFC4jiot57sQ" name="Redshift_gdap_Port" prompt="Redshift_gdap_Port?" promptNeeded="false" repositoryContextId="_oeeZMP3VEeasOf6-zCyBHg" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_vwhqTdeDEeyFC4jiot57sQ" name="Redshift_gdap_Schema" prompt="Redshift_gdap_Schema?" promptNeeded="false" repositoryContextId="_oeeZMP3VEeasOf6-zCyBHg" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_vwhqTteDEeyFC4jiot57sQ" name="Redshift_gdap_Server" prompt="Redshift_gdap_Server?" promptNeeded="false" repositoryContextId="_oeeZMP3VEeasOf6-zCyBHg" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_vwhqT9eDEeyFC4jiot57sQ" name="Redshift_gdap_Stage" prompt="Redshift_gdap_Stage?" promptNeeded="false" repositoryContextId="_oeeZMP3VEeasOf6-zCyBHg" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_vwhqUNeDEeyFC4jiot57sQ" name="Redshift_gdap_Utility" prompt="Redshift_gdap_Utility?" promptNeeded="false" repositoryContextId="_oeeZMP3VEeasOf6-zCyBHg" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_vwhqUdeDEeyFC4jiot57sQ" name="Redshift_gdap_Views" prompt="Redshift_gdap_Views?" promptNeeded="false" repositoryContextId="_oeeZMP3VEeasOf6-zCyBHg" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_vwhqUteDEeyFC4jiot57sQ" name="Globaldatalake_Access_Key_Id" prompt="Globaldatalake_Access_Key_Id?" promptNeeded="false" repositoryContextId="_ZCGpEAAKEeecKdOhbMdEgA" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_vwhqU9eDEeyFC4jiot57sQ" name="Globaldatalake_Bucket_name" prompt="Globaldatalake_Bucket_name?" promptNeeded="false" repositoryContextId="_ZCGpEAAKEeecKdOhbMdEgA" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_vwhqVNeDEeyFC4jiot57sQ" name="Globaldatalake_Date" prompt="Globaldatalake_Date?" promptNeeded="false" repositoryContextId="_ZCGpEAAKEeecKdOhbMdEgA" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_vwhqVdeDEeyFC4jiot57sQ" name="Globaldatalake_Path" prompt="Globaldatalake_Path?" promptNeeded="false" repositoryContextId="_ZCGpEAAKEeecKdOhbMdEgA" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_vwhqVteDEeyFC4jiot57sQ" name="Globaldatalake_Secret_Access_Key" prompt="Globaldatalake_Secret_Access_Key?" promptNeeded="false" repositoryContextId="_ZCGpEAAKEeecKdOhbMdEgA" type="id_Password" value=""/>
+    <contextParameter comment="" internalId="_vwhqV9eDEeyFC4jiot57sQ" name="Globaldatalake_Stage_Path" prompt="Globaldatalake_Stage_Path?" promptNeeded="false" repositoryContextId="_ZCGpEAAKEeecKdOhbMdEgA" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_vwhqWNeDEeyFC4jiot57sQ" name="Globaldatalake_SubjectArea" prompt="Globaldatalake_SubjectArea?" promptNeeded="false" repositoryContextId="_ZCGpEAAKEeecKdOhbMdEgA" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_vwhqWdeDEeyFC4jiot57sQ" name="Globaldatalake_Terr" prompt="Globaldatalake_Terr?" promptNeeded="false" repositoryContextId="_ZCGpEAAKEeecKdOhbMdEgA" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_vwhqWteDEeyFC4jiot57sQ" name="Globaloutbound_Access_Key_Id" prompt="Globaloutbound_Access_Key_Id?" promptNeeded="false" repositoryContextId="_ZCGpEAAKEeecKdOhbMdEgA" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_vwhqW9eDEeyFC4jiot57sQ" name="Globaloutbound_Bucket_Name" prompt="Globaloutbound_Bucket_Name?" promptNeeded="false" repositoryContextId="_ZCGpEAAKEeecKdOhbMdEgA" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_vwhqXNeDEeyFC4jiot57sQ" name="Globaloutbound_Date" prompt="Globaloutbound_Date?" promptNeeded="false" repositoryContextId="_ZCGpEAAKEeecKdOhbMdEgA" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_vwhqXdeDEeyFC4jiot57sQ" name="Globaloutbound_Path" prompt="Globaloutbound_Path?" promptNeeded="false" repositoryContextId="_ZCGpEAAKEeecKdOhbMdEgA" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_vwhqXteDEeyFC4jiot57sQ" name="Globaloutbound_Secret_Access_Key" prompt="Globaloutbound_Secret_Access_Key?" promptNeeded="false" repositoryContextId="_ZCGpEAAKEeecKdOhbMdEgA" type="id_Password" value=""/>
+    <contextParameter comment="" internalId="_vwhqX9eDEeyFC4jiot57sQ" name="Globaloutbound_SubjectArea" prompt="Globaloutbound_SubjectArea?" promptNeeded="false" repositoryContextId="_ZCGpEAAKEeecKdOhbMdEgA" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_vwhqYNeDEeyFC4jiot57sQ" name="Globaloutbound_Terr" prompt="Globaloutbound_Terr?" promptNeeded="false" repositoryContextId="_ZCGpEAAKEeecKdOhbMdEgA" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_vwhqYdeDEeyFC4jiot57sQ" name="Globalraw_Access_Key_Id" prompt="Globalraw_Access_Key_Id?" promptNeeded="false" repositoryContextId="_ZCGpEAAKEeecKdOhbMdEgA" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_vwhqYteDEeyFC4jiot57sQ" name="Globalraw_Archive_Path" prompt="Globalraw_Archive_Path?" promptNeeded="false" repositoryContextId="_ZCGpEAAKEeecKdOhbMdEgA" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_vwhqY9eDEeyFC4jiot57sQ" name="Globalraw_Archive_Subject" prompt="Globalraw_Archive_Subject?" promptNeeded="false" repositoryContextId="_ZCGpEAAKEeecKdOhbMdEgA" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_vwhqZNeDEeyFC4jiot57sQ" name="Globalraw_Bucket_Name" prompt="Globalraw_Bucket_Name?" promptNeeded="false" repositoryContextId="_ZCGpEAAKEeecKdOhbMdEgA" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_vwhqZdeDEeyFC4jiot57sQ" name="Globalraw_Date" prompt="Globalraw_Date?" promptNeeded="false" repositoryContextId="_ZCGpEAAKEeecKdOhbMdEgA" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_vwhqZteDEeyFC4jiot57sQ" name="Globalraw_Path" prompt="Globalraw_Path?" promptNeeded="false" repositoryContextId="_ZCGpEAAKEeecKdOhbMdEgA" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_vwhqZ9eDEeyFC4jiot57sQ" name="Globalraw_Secret_Access_Key" prompt="Globalraw_Secret_Access_Key?" promptNeeded="false" repositoryContextId="_ZCGpEAAKEeecKdOhbMdEgA" type="id_Password" value=""/>
+    <contextParameter comment="" internalId="_vwhqaNeDEeyFC4jiot57sQ" name="Globalraw_SubjectArea" prompt="Globalraw_SubjectArea?" promptNeeded="false" repositoryContextId="_ZCGpEAAKEeecKdOhbMdEgA" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_vwhqadeDEeyFC4jiot57sQ" name="Globalraw_Terr" prompt="Globalraw_Terr?" promptNeeded="false" repositoryContextId="_ZCGpEAAKEeecKdOhbMdEgA" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_vwhqateDEeyFC4jiot57sQ" name="S3_Bucket_GDAP_archive" prompt="S3_Bucket_GDAP_archive?" promptNeeded="false" repositoryContextId="_ZCGpEAAKEeecKdOhbMdEgA" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_vwhqa9eDEeyFC4jiot57sQ" name="S3_Bucket_GDAP_lookups" prompt="S3_Bucket_GDAP_lookups?" promptNeeded="false" repositoryContextId="_ZCGpEAAKEeecKdOhbMdEgA" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_vwhqbNeDEeyFC4jiot57sQ" name="S3_Bucket_GDAP_rejects" prompt="S3_Bucket_GDAP_rejects?" promptNeeded="false" repositoryContextId="_ZCGpEAAKEeecKdOhbMdEgA" type="id_String" value=""/>
+  </context>
+  <context confirmationNeeded="false" name="Stage">
+    <contextParameter comment="" internalId="_vwhqbdeDEeyFC4jiot57sQ" name="DwDataTypId" prompt="DwDataTypId?" promptNeeded="false" repositoryContextId="_p1z2c1m6Ee26dcjpa3ATew" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_vwhqbteDEeyFC4jiot57sQ" name="ErrMsg" prompt="ErrMsg?" promptNeeded="false" repositoryContextId="_p1z2c1m6Ee26dcjpa3ATew" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_vwhqb9eDEeyFC4jiot57sQ" name="GrandMasterName" prompt="GrandMasterName?" promptNeeded="false" repositoryContextId="_p1z2c1m6Ee26dcjpa3ATew" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_vwhqcNeDEeyFC4jiot57sQ" name="IsJobMaster" prompt="IsJobMaster?" promptNeeded="false" repositoryContextId="_p1z2c1m6Ee26dcjpa3ATew" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_vwhqcdeDEeyFC4jiot57sQ" name="JobGrpId" prompt="JobGrpId?" promptNeeded="false" repositoryContextId="_p1z2c1m6Ee26dcjpa3ATew" type="id_Long" value="-1"/>
+    <contextParameter comment="" internalId="_vwhqcteDEeyFC4jiot57sQ" name="JobLogId" prompt="JobLogId?" promptNeeded="false" repositoryContextId="_p1z2c1m6Ee26dcjpa3ATew" type="id_Long" value=""/>
+    <contextParameter comment="" internalId="_vwhqc9eDEeyFC4jiot57sQ" name="JobMasterName" prompt="JobMasterName?" promptNeeded="false" repositoryContextId="_p1z2c1m6Ee26dcjpa3ATew" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_vwhqdNeDEeyFC4jiot57sQ" name="JobName" prompt="JobName?" promptNeeded="false" repositoryContextId="_p1z2c1m6Ee26dcjpa3ATew" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_vwhqddeDEeyFC4jiot57sQ" name="JobRejObj" prompt="JobRejObj?" promptNeeded="false" repositoryContextId="_p1z2c1m6Ee26dcjpa3ATew" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_vwhqdteDEeyFC4jiot57sQ" name="JobRunId" prompt="JobRunId?" promptNeeded="false" repositoryContextId="_p1z2c1m6Ee26dcjpa3ATew" type="id_Long" value="-1"/>
+    <contextParameter comment="" internalId="_vwhqd9eDEeyFC4jiot57sQ" name="JobSrcObj" prompt="JobSrcObj?" promptNeeded="false" repositoryContextId="_p1z2c1m6Ee26dcjpa3ATew" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_vwhqeNeDEeyFC4jiot57sQ" name="JobStatus" prompt="JobStatus?" promptNeeded="false" repositoryContextId="_p1z2c1m6Ee26dcjpa3ATew" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_vwhqedeDEeyFC4jiot57sQ" name="JobTgtObj" prompt="JobTgtObj?" promptNeeded="false" repositoryContextId="_p1z2c1m6Ee26dcjpa3ATew" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_vwhqeteDEeyFC4jiot57sQ" name="RejRowCnt" prompt="RejRowCnt?" promptNeeded="false" repositoryContextId="_p1z2c1m6Ee26dcjpa3ATew" type="id_Integer" value=""/>
+    <contextParameter comment="" internalId="_vwhqe9eDEeyFC4jiot57sQ" name="SendEmailFlg" prompt="SendEmailFlg?" promptNeeded="false" repositoryContextId="_p1z2c1m6Ee26dcjpa3ATew" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_vwhqfNeDEeyFC4jiot57sQ" name="SrcRowCnt" prompt="SrcRowCnt?" promptNeeded="false" repositoryContextId="_p1z2c1m6Ee26dcjpa3ATew" type="id_Integer" value=""/>
+    <contextParameter comment="" internalId="_vwhqfdeDEeyFC4jiot57sQ" name="StaticFileName" prompt="StaticFileName?" promptNeeded="false" repositoryContextId="_p1z2c1m6Ee26dcjpa3ATew" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_vwhqfteDEeyFC4jiot57sQ" name="Subject_Area" prompt="Subject_Area?" promptNeeded="false" repositoryContextId="_p1z2c1m6Ee26dcjpa3ATew" type="id_String" value=""/>
+    <contextParameter comment="    " internalId="_vwhqf9eDEeyFC4jiot57sQ" name="SubjId" prompt="SubjId?" promptNeeded="false" repositoryContextId="_p1z2c1m6Ee26dcjpa3ATew" type="id_Long" value=""/>
+    <contextParameter comment="" internalId="_vwhqgNeDEeyFC4jiot57sQ" name="TgtDS" prompt="TgtDS?" promptNeeded="false" repositoryContextId="_p1z2c1m6Ee26dcjpa3ATew" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_vwhqgdeDEeyFC4jiot57sQ" name="TgtFlg" prompt="TgtFlg?" promptNeeded="false" repositoryContextId="_p1z2c1m6Ee26dcjpa3ATew" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_vwhqgteDEeyFC4jiot57sQ" name="TgtRowCnt" prompt="TgtRowCnt?" promptNeeded="false" repositoryContextId="_p1z2c1m6Ee26dcjpa3ATew" type="id_Integer" value=""/>
+    <contextParameter comment="" internalId="_vwhqg9eDEeyFC4jiot57sQ" name="TgtSeqNo" prompt="TgtSeqNo?" promptNeeded="false" repositoryContextId="_p1z2c1m6Ee26dcjpa3ATew" type="id_Short" value=""/>
+    <contextParameter comment="api connection timeout value in seconds for tRestClient" internalId="_vwhqhNeDEeyFC4jiot57sQ" name="api_connection_timeout" prompt="api_connection_timeout?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_Integer" value="60"/>
+    <contextParameter comment="key value for authorization to connect to api" internalId="_vwhqhdeDEeyFC4jiot57sQ" name="api_key_value" prompt="api_key_value?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="api receive timeout value in seconds for tRestClient" internalId="_vwhqhteDEeyFC4jiot57sQ" name="api_receive_timeout" prompt="api_receive_timeout?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_Integer" value="60"/>
+    <contextParameter comment="api type - job or file register or search" internalId="_vwhqh9eDEeyFC4jiot57sQ" name="api_type" prompt="api_type?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="api url" internalId="_vwhqiNeDEeyFC4jiot57sQ" name="api_url" prompt="api_url?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="api authorization token for connection" internalId="_vwhqideDEeyFC4jiot57sQ" name="authorization_token" prompt="authorization_token?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="aud_proc - process id" internalId="_vwhqiteDEeyFC4jiot57sQ" name="dw_audt_prcs_typ_id" prompt="dw_audt_prcs_typ_id?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="file status typ id" internalId="_vwhqi9eDEeyFC4jiot57sQ" name="dw_audt_stus_typ_id" prompt="dw_audt_stus_typ_id?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="file data typ id " internalId="_vwhqjNeDEeyFC4jiot57sQ" name="dw_data_typ_id" prompt="dw_data_typ_id?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="aud_proc_id - random generated number" internalId="_vwhqjdeDEeyFC4jiot57sQ" name="dw_file_audt_prcs_id" prompt="dw_file_audt_prcs_id?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="file id" internalId="_vwhqjteDEeyFC4jiot57sQ" name="dw_file_id" prompt="dw_file_id?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value="-1"/>
+    <contextParameter comment="file_name - for file registration" internalId="_vwhqj9eDEeyFC4jiot57sQ" name="dw_file_na" prompt="dw_file_na?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="abac api file state process id" internalId="_vwhqkNeDEeyFC4jiot57sQ" name="dw_file_st_audt_prcs_typ_id" prompt="dw_file_st_audt_prcs_typ_id?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="aud_file_proc_id - random generated number" internalId="_vwhqkdeDEeyFC4jiot57sQ" name="dw_file_state_aud_proc_id" prompt="dw_file_state_aud_proc_id?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="file type - xls , psv , csv etc" internalId="_vwhqkteDEeyFC4jiot57sQ" name="dw_file_typ" prompt="dw_file_typ?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="job process id random generated value " internalId="_vwhqk9eDEeyFC4jiot57sQ" name="dw_job_audt_prcs_id" prompt="dw_job_audt_prcs_id?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="job process id" internalId="_vwhqlNeDEeyFC4jiot57sQ" name="dw_job_audt_prcs_typ_id" prompt="dw_job_audt_prcs_typ_id?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value="11"/>
+    <contextParameter comment="job state execution id" internalId="_vwhqldeDEeyFC4jiot57sQ" name="dw_job_execution_id" prompt="dw_job_execution_id?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="job id" internalId="_vwhqlteDEeyFC4jiot57sQ" name="dw_job_id" prompt="dw_job_id?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="job name " internalId="_vwiQ4NeDEeyFC4jiot57sQ" name="dw_job_na" prompt="dw_job_na?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="job state aud proc unique id " internalId="_vwiQ4deDEeyFC4jiot57sQ" name="dw_job_st_audt_prcs_id" prompt="dw_job_st_audt_prcs_id?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="job state aud process typ id " internalId="_vwiQ4teDEeyFC4jiot57sQ" name="dw_job_st_audt_prcs_typ_id" prompt="dw_job_st_audt_prcs_typ_id?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="job status return code" internalId="_vwiQ49eDEeyFC4jiot57sQ" name="dw_job_stus_ret_cd" prompt="dw_job_stus_ret_cd?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="job detail status" internalId="_vwiQ5NeDEeyFC4jiot57sQ" name="dw_job_stus_typ_ds" prompt="dw_job_stus_typ_ds?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value="SUCCESS"/>
+    <contextParameter comment="job status code" internalId="_vwiQ5deDEeyFC4jiot57sQ" name="dw_job_stus_typ_id" prompt="dw_job_stus_typ_id?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value="1"/>
+    <contextParameter comment="job execution id" internalId="_vwiQ5teDEeyFC4jiot57sQ" name="dw_job_xect_id" prompt="dw_job_xect_id?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="job master state audt process id" internalId="_vwiQ59eDEeyFC4jiot57sQ" name="dw_ma_job_st_audt_prcs_id" prompt="dw_ma_job_st_audt_prcs_id?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="job parent state audt process id" internalId="_vwiQ6NeDEeyFC4jiot57sQ" name="dw_pa_job_st_audt_prcs_id" prompt="dw_pa_job_st_audt_prcs_id?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="rendome genereted parent job audt process id  in GM propogates to child jobs" internalId="_vwiQ6deDEeyFC4jiot57sQ" name="dw_parent_job_audt_prcs_id" prompt="dw_parent_job_audt_prcs_id?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="parent job id " internalId="_vwiQ6teDEeyFC4jiot57sQ" name="dw_parent_job_ret_id" prompt="dw_parent_job_ret_id?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="dw_job_xect_id as generated in GM job passed to all jobs" internalId="_vwiQ69eDEeyFC4jiot57sQ" name="dw_parent_job_xect_id" prompt="dw_parent_job_xect_id?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="file or job process timestamp" internalId="_vwiQ7NeDEeyFC4jiot57sQ" name="dw_prcs_ts" prompt="dw_prcs_ts?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="parent job id " internalId="_vwiQ7deDEeyFC4jiot57sQ" name="dw_pren_job_id" prompt="dw_pren_job_id?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="parent job name" internalId="_vwiQ7teDEeyFC4jiot57sQ" name="dw_pren_job_na" prompt="dw_pren_job_na?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="batch size of file ids to be sent as part of state change" internalId="_vwiQ79eDEeyFC4jiot57sQ" name="file_batch_size" prompt="file_batch_size?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_Integer" value="500"/>
+    <contextParameter comment="file status when file processing is failure" internalId="_vwiQ8NeDEeyFC4jiot57sQ" name="file_failure_status" prompt="file_failure_status?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value="7"/>
+    <contextParameter comment="file initial status to check on registeration by abac" internalId="_vwiQ8deDEeyFC4jiot57sQ" name="file_initial_status" prompt="file_initial_status?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value="2"/>
+    <contextParameter comment="file path  - s3 path " internalId="_vwiQ8teDEeyFC4jiot57sQ" name="file_path_ds" prompt="file_path_ds?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="file status when file is on job server" internalId="_vwiQ89eDEeyFC4jiot57sQ" name="file_processing_status" prompt="file_processing_status?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value="4"/>
+    <contextParameter comment="file status when processing started by talend " internalId="_vwiQ9NeDEeyFC4jiot57sQ" name="file_ready_status" prompt="file_ready_status?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value="3"/>
+    <contextParameter comment="file status when file is processed successfully" internalId="_vwiQ9deDEeyFC4jiot57sQ" name="file_success_status" prompt="file_success_status?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value="5"/>
+    <contextParameter comment="file status when validated to be loaded" internalId="_vwiQ9teDEeyFC4jiot57sQ" name="file_validated_status" prompt="file_validated_status?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value="9"/>
+    <contextParameter comment="list of file id and names" internalId="_vwiQ99eDEeyFC4jiot57sQ" name="fileidnalist" prompt="fileidnalist?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="list of files " internalId="_vwiQ-NeDEeyFC4jiot57sQ" name="filelist" prompt="filelist?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="S3 bucket for files landing in landing zone bucket" internalId="_vwiQ-deDEeyFC4jiot57sQ" name="GlobalLandingZone" prompt="GlobalLandingZone?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="flag if landing zone job" internalId="_vwiQ-teDEeyFC4jiot57sQ" name="isabaclz" prompt="isabaclz?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="flag if archival of source file needed in post process" internalId="_vwiQ-9eDEeyFC4jiot57sQ" name="isArchive" prompt="isArchive?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="if Parent job" internalId="_vwiQ_NeDEeyFC4jiot57sQ" name="isParent" prompt="isParent?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value="Y"/>
+    <contextParameter comment="flag if post process job" internalId="_vwiQ_deDEeyFC4jiot57sQ" name="ispostprocess" prompt="ispostprocess?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="job process timestamp" internalId="_vwiQ_teDEeyFC4jiot57sQ" name="job_prcs_ts" prompt="job_prcs_ts?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="equivalent of JobGrpId" internalId="_vwiQ_9eDEeyFC4jiot57sQ" name="JobGrpIdNew" prompt="JobGrpIdNew?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="equivalent of JobRunId" internalId="_vwiRANeDEeyFC4jiot57sQ" name="JobRunIdNew" prompt="JobRunIdNew?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="output json" internalId="_vwiRAdeDEeyFC4jiot57sQ" name="json_out" prompt="json_out?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="loop counter" internalId="_vwiRAteDEeyFC4jiot57sQ" name="loopcounter" prompt="loopcounter?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_Integer" value="0"/>
+    <contextParameter comment="json response message" internalId="_vwiRA9eDEeyFC4jiot57sQ" name="message" prompt="message?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="metadata of file or job" internalId="_vwiRBNeDEeyFC4jiot57sQ" name="metadata" prompt="metadata?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value="true"/>
+    <contextParameter comment="operation value eq or ne for json request" internalId="_vwiRBdeDEeyFC4jiot57sQ" name="operation_ne" prompt="operation_ne?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="api_request_code -  request type code" internalId="_vwiRBteDEeyFC4jiot57sQ" name="request_cd" prompt="request_cd?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="json response status code" internalId="_vwiRB9eDEeyFC4jiot57sQ" name="request_status_cd" prompt="request_status_cd?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="json response status code" internalId="_vwiRCNeDEeyFC4jiot57sQ" name="request_status_code" prompt="request_status_code?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="offline result in case of more files to extract json " internalId="_vwiRCdeDEeyFC4jiot57sQ" name="results_offline" prompt="results_offline?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="counter for how many times job will retry for json request" internalId="_vwiRCteDEeyFC4jiot57sQ" name="retryloop" prompt="retryloop?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_Integer" value="3"/>
+    <contextParameter comment="sleep time to  retry" internalId="_vwiRC9eDEeyFC4jiot57sQ" name="retrysleep" prompt="retrysleep?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_Integer" value="5"/>
+    <contextParameter comment="path on job server for intermediate file  processing /app/API" internalId="_vwiRDNeDEeyFC4jiot57sQ" name="Root_Path_API" prompt="Root_Path_API?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="loop counter to check file  on S3" internalId="_vwiRDdeDEeyFC4jiot57sQ" name="s3loopcounter" prompt="s3loopcounter?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_Integer" value="0"/>
+    <contextParameter comment="retry loop counter to check file  on S3" internalId="_vwiRDteDEeyFC4jiot57sQ" name="s3loopretry" prompt="s3loopretry?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_Integer" value="5"/>
+    <contextParameter comment="sleep time for S3 response to be received offline from API" internalId="_vwiRD9eDEeyFC4jiot57sQ" name="s3reponsesleep" prompt="s3reponsesleep?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_Integer" value="40"/>
+    <contextParameter comment="number of days variable to  find file inserted in doc db after currentdate - the days set in" internalId="_vwiRENeDEeyFC4jiot57sQ" name="set_file_search_days" prompt="set_file_search_days?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_Integer" value=""/>
+    <contextParameter comment="sleep time  for connecting to S3 before redshift copy begins" internalId="_vwiREdeDEeyFC4jiot57sQ" name="sleep_time" prompt="sleep_time?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_Integer" value=""/>
+    <contextParameter comment="sourcesystemcode value for connecting to API" internalId="_vwiREteDEeyFC4jiot57sQ" name="source_system_cd" prompt="source_system_cd?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="sourcetype code value for connecting to API" internalId="_vwiRE9eDEeyFC4jiot57sQ" name="source_type_cd" prompt="source_type_cd?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="state of file or job latest or all" internalId="_vwiRFNeDEeyFC4jiot57sQ" name="state_count" prompt="state_count?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value="1"/>
+    <contextParameter comment="file or job status " internalId="_vwiRFdeDEeyFC4jiot57sQ" name="status" prompt="status?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="json status code " internalId="_vwiRFteDEeyFC4jiot57sQ" name="status_cd" prompt="status_cd?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="json status code" internalId="_vwiRF9eDEeyFC4jiot57sQ" name="status_code" prompt="status_code?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value=""/>
+    <contextParameter comment="version_history of file or job " internalId="_vwiRGNeDEeyFC4jiot57sQ" name="version_history" prompt="version_history?" promptNeeded="false" repositoryContextId="_ogBvQD4tEeu2X6AP1IR9-A" type="id_String" value="0"/>
+    <contextParameter comment="token parameter name as in context db" internalId="_vwiRGdeDEeyFC4jiot57sQ" name="ABaC_API_Token_Param_URL" prompt="ABaC_API_Token_Param_URL?" promptNeeded="false" repositoryContextId="_ue81UMQzEeuLUphvHtcNjQ" type="id_String" value=""/>
+    <contextParameter comment="api_url as in context db" internalId="_vwiRGteDEeyFC4jiot57sQ" name="ABaC_API_URL" prompt="ABaC_API_URL?" promptNeeded="false" repositoryContextId="_ue81UMQzEeuLUphvHtcNjQ" type="id_String" value=""/>
+    <contextParameter comment="aws_region as in context db" internalId="_vwiRG9eDEeyFC4jiot57sQ" name="AWS_Param_Store_Region" prompt="AWS_Param_Store_Region?" promptNeeded="false" repositoryContextId="_ue81UMQzEeuLUphvHtcNjQ" type="id_String" value=""/>
+    <contextParameter comment="define aws region for fetching from AWS parameter store" internalId="_vwiRHNeDEeyFC4jiot57sQ" name="aws_region" prompt="aws_region?" promptNeeded="false" repositoryContextId="_ue81UMQzEeuLUphvHtcNjQ" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_vwiRHdeDEeyFC4jiot57sQ" name="email" prompt="email?" promptNeeded="false" repositoryContextId="_ue81UMQzEeuLUphvHtcNjQ" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_vwiRHteDEeyFC4jiot57sQ" name="environment" prompt="environment?" promptNeeded="false" repositoryContextId="_ue81UMQzEeuLUphvHtcNjQ" type="id_String" value=""/>
+    <contextParameter comment="dw_data_typ_ids of files being processed" internalId="_vwiRH9eDEeyFC4jiot57sQ" name="file_dw_data_typ_id" prompt="file_dw_data_typ_id?" promptNeeded="false" repositoryContextId="_ue81UMQzEeuLUphvHtcNjQ" type="id_String" value=""/>
+    <contextParameter comment="flag if lookup files have to be generated on HDFS also" internalId="_vwiRINeDEeyFC4jiot57sQ" name="generateHDFSFiles" prompt="generateHDFSFiles?" promptNeeded="false" repositoryContextId="_ue81UMQzEeuLUphvHtcNjQ" type="id_String" value=""/>
+    <contextParameter comment="set variable if pre job is successful" internalId="_vwiRIdeDEeyFC4jiot57sQ" name="isprejobsuccess" prompt="isprejobsuccess?" promptNeeded="false" repositoryContextId="_ue81UMQzEeuLUphvHtcNjQ" type="id_String" value=""/>
+    <contextParameter comment="Unique grandmaster id " internalId="_vwiRIteDEeyFC4jiot57sQ" name="ProcessId" prompt="ProcessId?" promptNeeded="false" repositoryContextId="_ue81UMQzEeuLUphvHtcNjQ" type="id_String" value=""/>
+    <contextParameter comment="S3 bucket path for lookup files created by GBL process" internalId="_vwiRI9eDEeyFC4jiot57sQ" name="s3gbllookupPath" prompt="s3gbllookupPath?" promptNeeded="false" repositoryContextId="_ue81UMQzEeuLUphvHtcNjQ" type="id_String" value=""/>
+    <contextParameter comment="S3 bucket input path for files" internalId="_vwiRJNeDEeyFC4jiot57sQ" name="s3inputpath" prompt="s3inputpath?" promptNeeded="false" repositoryContextId="_ue81UMQzEeuLUphvHtcNjQ" type="id_String" value=""/>
+    <contextParameter comment="Path on S3 for storing lookup files" internalId="_vwiRJdeDEeyFC4jiot57sQ" name="s3lookupPath" prompt="s3lookupPath?" promptNeeded="false" repositoryContextId="_ue81UMQzEeuLUphvHtcNjQ" type="id_String" value=""/>
+    <contextParameter comment="Folder on S3  where offline resut willbe stored" internalId="_vwiRJteDEeyFC4jiot57sQ" name="s3offlinefolder" prompt="s3offlinefolder?" promptNeeded="false" repositoryContextId="_ue81UMQzEeuLUphvHtcNjQ" type="id_String" value="offline_results"/>
+    <contextParameter comment="Get API offline result on S3" internalId="_vwiRJ9eDEeyFC4jiot57sQ" name="s3offlineresult" prompt="s3offlineresult?" promptNeeded="false" repositoryContextId="_ue81UMQzEeuLUphvHtcNjQ" type="id_String" value="N"/>
+    <contextParameter comment="S3 bucket static path for files" internalId="_vwiRKNeDEeyFC4jiot57sQ" name="s3staticpath" prompt="s3staticpath?" promptNeeded="false" repositoryContextId="_ue81UMQzEeuLUphvHtcNjQ" type="id_String" value=""/>
+    <contextParameter comment="Send mail SMTP address" internalId="_vwiRKdeDEeyFC4jiot57sQ" name="Talend_SMTP_Fromaddress" prompt="Talend_SMTP_Fromaddress?" promptNeeded="false" repositoryContextId="_ue81UMQzEeuLUphvHtcNjQ" type="id_String" value=""/>
+    <contextParameter comment="Send mail SMTP host" internalId="_vwiRKteDEeyFC4jiot57sQ" name="Talend_SMTP_Host" prompt="Talend_SMTP_Host?" promptNeeded="false" repositoryContextId="_ue81UMQzEeuLUphvHtcNjQ" type="id_String" value=""/>
+    <contextParameter comment="Send Mail SMTP port" internalId="_vwiRK9eDEeyFC4jiot57sQ" name="Talend_SMTP_Port" prompt="Talend_SMTP_Port?" promptNeeded="false" repositoryContextId="_ue81UMQzEeuLUphvHtcNjQ" type="id_String" value=""/>
+    <contextParameter comment="Generic Token name string for all systems" internalId="_vwiRLNeDEeyFC4jiot57sQ" name="token_parameter_name" prompt="token_parameter_name?" promptNeeded="false" repositoryContextId="_ue81UMQzEeuLUphvHtcNjQ" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_vwiRLdeDEeyFC4jiot57sQ" name="Redshift_gdap_AdditionalParams" prompt="Redshift_gdap_AdditionalParams?" promptNeeded="false" repositoryContextId="_oeeZMP3VEeasOf6-zCyBHg" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_vwiRLteDEeyFC4jiot57sQ" name="Redshift_gdap_Database" prompt="Redshift_gdap_Database?" promptNeeded="false" repositoryContextId="_oeeZMP3VEeasOf6-zCyBHg" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_vwiRL9eDEeyFC4jiot57sQ" name="Redshift_gdap_IAM_Role" prompt="Redshift_gdap_IAM_Role?" promptNeeded="false" repositoryContextId="_oeeZMP3VEeasOf6-zCyBHg" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_vwiRMNeDEeyFC4jiot57sQ" name="Redshift_gdap_Login" prompt="Redshift_gdap_Login?" promptNeeded="false" repositoryContextId="_oeeZMP3VEeasOf6-zCyBHg" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_vwiRMdeDEeyFC4jiot57sQ" name="Redshift_gdap_Password" prompt="Redshift_gdap_Password?" promptNeeded="false" repositoryContextId="_oeeZMP3VEeasOf6-zCyBHg" type="id_Password" value=""/>
+    <contextParameter comment="" internalId="_vwiRMteDEeyFC4jiot57sQ" name="Redshift_gdap_Port" prompt="Redshift_gdap_Port?" promptNeeded="false" repositoryContextId="_oeeZMP3VEeasOf6-zCyBHg" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_vwiRM9eDEeyFC4jiot57sQ" name="Redshift_gdap_Schema" prompt="Redshift_gdap_Schema?" promptNeeded="false" repositoryContextId="_oeeZMP3VEeasOf6-zCyBHg" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_vwiRNNeDEeyFC4jiot57sQ" name="Redshift_gdap_Server" prompt="Redshift_gdap_Server?" promptNeeded="false" repositoryContextId="_oeeZMP3VEeasOf6-zCyBHg" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_vwiRNdeDEeyFC4jiot57sQ" name="Redshift_gdap_Stage" prompt="Redshift_gdap_Stage?" promptNeeded="false" repositoryContextId="_oeeZMP3VEeasOf6-zCyBHg" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_vwiRNteDEeyFC4jiot57sQ" name="Redshift_gdap_Utility" prompt="Redshift_gdap_Utility?" promptNeeded="false" repositoryContextId="_oeeZMP3VEeasOf6-zCyBHg" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_vwiRN9eDEeyFC4jiot57sQ" name="Redshift_gdap_Views" prompt="Redshift_gdap_Views?" promptNeeded="false" repositoryContextId="_oeeZMP3VEeasOf6-zCyBHg" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_vwiRONeDEeyFC4jiot57sQ" name="Globaldatalake_Access_Key_Id" prompt="Globaldatalake_Access_Key_Id?" promptNeeded="false" repositoryContextId="_ZCGpEAAKEeecKdOhbMdEgA" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_vwiROdeDEeyFC4jiot57sQ" name="Globaldatalake_Bucket_name" prompt="Globaldatalake_Bucket_name?" promptNeeded="false" repositoryContextId="_ZCGpEAAKEeecKdOhbMdEgA" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_vwiROteDEeyFC4jiot57sQ" name="Globaldatalake_Date" prompt="Globaldatalake_Date?" promptNeeded="false" repositoryContextId="_ZCGpEAAKEeecKdOhbMdEgA" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_vwiRO9eDEeyFC4jiot57sQ" name="Globaldatalake_Path" prompt="Globaldatalake_Path?" promptNeeded="false" repositoryContextId="_ZCGpEAAKEeecKdOhbMdEgA" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_vwiRPNeDEeyFC4jiot57sQ" name="Globaldatalake_Secret_Access_Key" prompt="Globaldatalake_Secret_Access_Key?" promptNeeded="false" repositoryContextId="_ZCGpEAAKEeecKdOhbMdEgA" type="id_Password" value=""/>
+    <contextParameter comment="" internalId="_vwiRPdeDEeyFC4jiot57sQ" name="Globaldatalake_Stage_Path" prompt="Globaldatalake_Stage_Path?" promptNeeded="false" repositoryContextId="_ZCGpEAAKEeecKdOhbMdEgA" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_vwiRPteDEeyFC4jiot57sQ" name="Globaldatalake_SubjectArea" prompt="Globaldatalake_SubjectArea?" promptNeeded="false" repositoryContextId="_ZCGpEAAKEeecKdOhbMdEgA" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_vwiRP9eDEeyFC4jiot57sQ" name="Globaldatalake_Terr" prompt="Globaldatalake_Terr?" promptNeeded="false" repositoryContextId="_ZCGpEAAKEeecKdOhbMdEgA" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_vwiRQNeDEeyFC4jiot57sQ" name="Globaloutbound_Access_Key_Id" prompt="Globaloutbound_Access_Key_Id?" promptNeeded="false" repositoryContextId="_ZCGpEAAKEeecKdOhbMdEgA" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_vwiRQdeDEeyFC4jiot57sQ" name="Globaloutbound_Bucket_Name" prompt="Globaloutbound_Bucket_Name?" promptNeeded="false" repositoryContextId="_ZCGpEAAKEeecKdOhbMdEgA" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_vwiRQteDEeyFC4jiot57sQ" name="Globaloutbound_Date" prompt="Globaloutbound_Date?" promptNeeded="false" repositoryContextId="_ZCGpEAAKEeecKdOhbMdEgA" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_vwiRQ9eDEeyFC4jiot57sQ" name="Globaloutbound_Path" prompt="Globaloutbound_Path?" promptNeeded="false" repositoryContextId="_ZCGpEAAKEeecKdOhbMdEgA" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_vwiRRNeDEeyFC4jiot57sQ" name="Globaloutbound_Secret_Access_Key" prompt="Globaloutbound_Secret_Access_Key?" promptNeeded="false" repositoryContextId="_ZCGpEAAKEeecKdOhbMdEgA" type="id_Password" value=""/>
+    <contextParameter comment="" internalId="_vwiRRdeDEeyFC4jiot57sQ" name="Globaloutbound_SubjectArea" prompt="Globaloutbound_SubjectArea?" promptNeeded="false" repositoryContextId="_ZCGpEAAKEeecKdOhbMdEgA" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_vwiRRteDEeyFC4jiot57sQ" name="Globaloutbound_Terr" prompt="Globaloutbound_Terr?" promptNeeded="false" repositoryContextId="_ZCGpEAAKEeecKdOhbMdEgA" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_vwiRR9eDEeyFC4jiot57sQ" name="Globalraw_Access_Key_Id" prompt="Globalraw_Access_Key_Id?" promptNeeded="false" repositoryContextId="_ZCGpEAAKEeecKdOhbMdEgA" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_vwiRSNeDEeyFC4jiot57sQ" name="Globalraw_Archive_Path" prompt="Globalraw_Archive_Path?" promptNeeded="false" repositoryContextId="_ZCGpEAAKEeecKdOhbMdEgA" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_vwiRSdeDEeyFC4jiot57sQ" name="Globalraw_Archive_Subject" prompt="Globalraw_Archive_Subject?" promptNeeded="false" repositoryContextId="_ZCGpEAAKEeecKdOhbMdEgA" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_vwiRSteDEeyFC4jiot57sQ" name="Globalraw_Bucket_Name" prompt="Globalraw_Bucket_Name?" promptNeeded="false" repositoryContextId="_ZCGpEAAKEeecKdOhbMdEgA" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_vwiRS9eDEeyFC4jiot57sQ" name="Globalraw_Date" prompt="Globalraw_Date?" promptNeeded="false" repositoryContextId="_ZCGpEAAKEeecKdOhbMdEgA" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_vwiRTNeDEeyFC4jiot57sQ" name="Globalraw_Path" prompt="Globalraw_Path?" promptNeeded="false" repositoryContextId="_ZCGpEAAKEeecKdOhbMdEgA" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_vwiRTdeDEeyFC4jiot57sQ" name="Globalraw_Secret_Access_Key" prompt="Globalraw_Secret_Access_Key?" promptNeeded="false" repositoryContextId="_ZCGpEAAKEeecKdOhbMdEgA" type="id_Password" value=""/>
+    <contextParameter comment="" internalId="_vwiRTteDEeyFC4jiot57sQ" name="Globalraw_SubjectArea" prompt="Globalraw_SubjectArea?" promptNeeded="false" repositoryContextId="_ZCGpEAAKEeecKdOhbMdEgA" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_vwiRT9eDEeyFC4jiot57sQ" name="Globalraw_Terr" prompt="Globalraw_Terr?" promptNeeded="false" repositoryContextId="_ZCGpEAAKEeecKdOhbMdEgA" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_vwiRUNeDEeyFC4jiot57sQ" name="S3_Bucket_GDAP_archive" prompt="S3_Bucket_GDAP_archive?" promptNeeded="false" repositoryContextId="_ZCGpEAAKEeecKdOhbMdEgA" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_vwiRUdeDEeyFC4jiot57sQ" name="S3_Bucket_GDAP_lookups" prompt="S3_Bucket_GDAP_lookups?" promptNeeded="false" repositoryContextId="_ZCGpEAAKEeecKdOhbMdEgA" type="id_String" value=""/>
+    <contextParameter comment="" internalId="_vwiRUteDEeyFC4jiot57sQ" name="S3_Bucket_GDAP_rejects" prompt="S3_Bucket_GDAP_rejects?" promptNeeded="false" repositoryContextId="_ZCGpEAAKEeecKdOhbMdEgA" type="id_String" value=""/>
+  </context>
+  <parameters>
+    <elementParameter field="CLOSED_LIST" name="LOG4J_RUN_LEVEL" show="false" value="Info"/>
+    <elementParameter field="TEXT" name="SCREEN_OFFSET_X" show="false" value="192"/>
+    <elementParameter field="TEXT" name="SCREEN_OFFSET_Y" show="false" value="384"/>
+    <elementParameter field="TEXT" name="REPOSITORY_CONNECTION_ID" show="false" value=""/>
+    <elementParameter field="TEXT" name="OOZIE_PROPERTY_TYPENAME" show="false" value=""/>
+    <elementParameter field="TEXT" name="OOZIE_HADOOP_DISTRIBUTION" show="false" value=""/>
+    <elementParameter field="TEXT" name="OOZIE_HADOOP_VERSION" show="false" value=""/>
+    <elementParameter field="TEXT" name="OOZIE_ENABLE_KERBEROS" show="false" value=""/>
+    <elementParameter field="TEXT" name="OOZIE_NAME_NODE_PRINCIPAL" show="false" value=""/>
+    <elementParameter field="TEXT" name="OOZIE_USERNAME" show="false" value=""/>
+    <elementParameter field="TEXT" name="OOZIE_GROUP" show="false" value=""/>
+    <elementParameter field="TEXT" name="OOZIE_USE_KEYTAB" show="false" value=""/>
+    <elementParameter field="TEXT" name="OOZIE_KT_PRINCIPAL" show="false" value=""/>
+    <elementParameter field="TEXT" name="OOZIE_KEY_TAB" show="false" value=""/>
+    <elementParameter field="TEXT" name="OOZIE_ENABLE_OO_KERBEROS" show="false" value=""/>
+    <elementParameter field="TEXT" name="OOZIE_NAME_NODE_END_POINT" show="false" value=""/>
+    <elementParameter field="TEXT" name="OOZIE_JOB_TRACKER_ENDPOINT" show="false" value=""/>
+    <elementParameter field="TEXT" name="OOZIE_END_POINT" show="false" value=""/>
+    <elementParameter field="CHECK" name="IMPLICITCONTEXT_USE_PROJECT_SETTINGS" show="false" value="true"/>
+    <elementParameter field="CHECK" name="STATANDLOG_USE_PROJECT_SETTINGS" show="false" value="true"/>
+    <elementParameter field="CHECK" name="MULTI_THREAD_EXECATION" value="false"/>
+    <elementParameter field="TEXT" name="PARALLELIZE_UNIT_SIZE" value="25000"/>
+    <elementParameter field="CHECK" name="IMPLICIT_TCONTEXTLOAD" value="false"/>
+    <elementParameter field="RADIO" name="FROM_FILE_FLAG_IMPLICIT_CONTEXT" show="false" value="false"/>
+    <elementParameter field="RADIO" name="FROM_DATABASE_FLAG_IMPLICIT_CONTEXT" show="false" value="false"/>
+    <elementParameter field="FILE" name="IMPLICIT_TCONTEXTLOAD_FILE" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="FIELDSEPARATOR" show="false" value="&quot;&quot;"/>
+    <elementParameter field="CHECK" name="OVERRIDE_ENCODING_FLAG" show="false" value="false"/>
+    <elementParameter field="ENCODING_TYPE" name="OVERRIDE_ENCODING_IN_EXTRA" show="false" value="ISO-8859-15"/>
+    <elementParameter field="TECHNICAL" name="OVERRIDE_ENCODING_IN_EXTRA:ENCODING_TYPE" show="false" value="ISO-8859-15"/>
+    <elementParameter field="TECHNICAL" name="PROPERTY_TYPE_IMPLICIT_CONTEXT:PROPERTY_TYPE" show="false" value=""/>
+    <elementParameter field="TECHNICAL" name="PROPERTY_TYPE_IMPLICIT_CONTEXT:REPOSITORY_PROPERTY_TYPE" show="false" value=""/>
+    <elementParameter field="CLOSED_LIST" name="DB_TYPE_IMPLICIT_CONTEXT" show="false" value=""/>
+    <elementParameter field="CLOSED_LIST" name="DB_VERSION_IMPLICIT_CONTEXT" show="false" value=""/>
+    <elementParameter field="TEXT" name="URL_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TABLE" name="DRIVER_JAR_IMPLICIT_CONTEXT" show="false"/>
+    <elementParameter field="TEXT" name="DRIVER_CLASS_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="HOST_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="PORT_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="DBNAME_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="LOCAL_SERVICE_NAME_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="PROPERTIES_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="SCHEMA_DB_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="USER_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
+    <elementParameter field="PASSWORD" name="PASS_IMPLICIT_CONTEXT" show="false" value="enc:system.encryption.key.v1:tyy8rsoRoYPYqiS6bVzJypsE968wEpnewnPtvQpv"/>
+    <elementParameter field="FILE" name="DBFILE_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
+    <elementParameter field="DBTABLE" name="DBTABLE_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="QUERY_CONDITION_IMPLICIT_CONTEXT" show="false" value="&quot;&quot;"/>
+    <elementParameter field="CLOSED_LIST" name="LOAD_NEW_VARIABLE" show="false" value="Warning"/>
+    <elementParameter field="CLOSED_LIST" name="NOT_LOAD_OLD_VARIABLE" show="false" value="Warning"/>
+    <elementParameter field="CHECK" name="PRINT_OPERATIONS" show="false" value="false"/>
+    <elementParameter field="CHECK" name="DISABLE_ERROR" show="false" value="false"/>
+    <elementParameter field="CHECK" name="DISABLE_WARNINGS" show="false" value="false"/>
+    <elementParameter field="CHECK" name="DISABLE_INFO" show="false" value="false"/>
+    <elementParameter field="CHECK" name="ON_STATCATCHER_FLAG" value="false"/>
+    <elementParameter field="CHECK" name="ON_LOGCATCHER_FLAG" value="false"/>
+    <elementParameter field="CHECK" name="ON_METERCATCHER_FLAG" value="false"/>
+    <elementParameter field="CHECK" name="ON_CONSOLE_FLAG" show="false" value="false"/>
+    <elementParameter field="CHECK" name="ON_FILES_FLAG" show="false" value="false"/>
+    <elementParameter field="DIRECTORY" name="FILE_PATH" show="false" value="&quot;C:/raghu/McD/Talend/workspace_6_5/.metadata&quot;"/>
+    <elementParameter field="TEXT" name="FILENAME_STATS" show="false" value="&quot;stats_file.txt&quot;"/>
+    <elementParameter field="TEXT" name="FILENAME_LOGS" show="false" value="&quot;logs_file.txt&quot;"/>
+    <elementParameter field="TEXT" name="FILENAME_METTER" show="false" value="&quot;meter_file.txt&quot;"/>
+    <elementParameter field="ENCODING_TYPE" name="ENCODING" show="false" value="ISO-8859-15"/>
+    <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" show="false" value="ISO-8859-15"/>
+    <elementParameter field="CHECK" name="ON_DATABASE_FLAG" show="false" value="false"/>
+    <elementParameter field="CLOSED_LIST" name="DB_TYPE" show="false" value="JDBCOutput"/>
+    <elementParameter field="CLOSED_LIST" name="DB_VERSION" show="false" value="ORACLE_11"/>
+    <elementParameter field="TEXT" name="URL" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TABLE" name="DRIVER_JAR" show="false"/>
+    <elementParameter field="TEXT" name="DRIVER_CLASS" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="HOST" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="PORT" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="DATASOURCE" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="DBNAME" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="LOCAL_SERVICE_NAME" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="PROPERTIES" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="SCHEMA_DB" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="USER" show="false" value="&quot;&quot;"/>
+    <elementParameter field="PASSWORD" name="PASS" show="false" value="enc:system.encryption.key.v1:KOwmXAxoEiy2/+qIQcTigaNbdnD0S0hut7Ue1GX8"/>
+    <elementParameter field="FILE" name="DBFILE" show="false" value="&quot;&quot;"/>
+    <elementParameter field="DBTABLE" name="TABLE_STATS" show="false" value="&quot;&quot;"/>
+    <elementParameter field="DBTABLE" name="TABLE_LOGS" show="false" value="&quot;&quot;"/>
+    <elementParameter field="DBTABLE" name="TABLE_METER" show="false" value="&quot;&quot;"/>
+    <elementParameter field="CHECK" name="CATCH_RUNTIME_ERRORS" show="false" value="true"/>
+    <elementParameter field="CHECK" name="CATCH_USER_ERRORS" show="false" value="true"/>
+    <elementParameter field="CHECK" name="CATCH_USER_WARNING" show="false" value="true"/>
+    <elementParameter field="CHECK" name="CATCH_REALTIME_STATS" show="false" value="false"/>
+    <elementParameter field="TEXT" name="HEADERFOOTER_HEADERID" show="false" value=""/>
+    <elementParameter field="CHECK" name="HEADER_ENABLED" show="false" value="false"/>
+    <elementParameter field="TEXT" name="HEADER_LIBRARY" show="false" value=""/>
+    <elementParameter field="TEXT" name="HEADER_CODE" show="false" value=""/>
+    <elementParameter field="TEXT" name="HEADER_IMPORT" show="false" value=""/>
+    <elementParameter field="TEXT" name="HEADERFOOTER_FOOTERID" show="false" value=""/>
+    <elementParameter field="CHECK" name="FOOTER_ENABLED" show="false" value="false"/>
+    <elementParameter field="TEXT" name="FOOTER_LIBRARY" show="false" value=""/>
+    <elementParameter field="TEXT" name="FOOTER_CODE" show="false" value=""/>
+    <elementParameter field="TEXT" name="FOOTER_IMPORT" show="false" value=""/>
+    <routinesParameter id="_JrsywIq7EeiujcNXtZANgA" name="DQTechnical"/>
+    <routinesParameter id="_Jq0pAIq7EeiujcNXtZANgA" name="DataMasking"/>
+    <routinesParameter id="_JrzgcIq7EeiujcNXtZANgA" name="DataOperation"/>
+    <routinesParameter id="_JrFHsIq7EeiujcNXtZANgA" name="DataQualityDependencies"/>
+    <routinesParameter id="_Jq8k0Iq7EeiujcNXtZANgA" name="DataQuality"/>
+    <routinesParameter id="_JrmFEIq7EeiujcNXtZANgA" name="DqStringHandling"/>
+    <routinesParameter id="_Jr6OIIq7EeiujcNXtZANgA" name="Mathematical"/>
+    <routinesParameter id="_JsA70Iq7EeiujcNXtZANgA" name="Numeric"/>
+    <routinesParameter id="_JsHpgIq7EeiujcNXtZANgA" name="Relational"/>
+    <routinesParameter id="_JoRrUIq7EeiujcNXtZANgA" name="SQLike"/>
+    <routinesParameter id="_JsPlUIq7EeiujcNXtZANgA" name="StringHandling"/>
+    <routinesParameter id="_JsXhIIq7EeiujcNXtZANgA" name="TalendDataGenerator"/>
+    <routinesParameter id="_JsjuYIq7EeiujcNXtZANgA" name="TalendDate"/>
+    <routinesParameter id="_JtCPgIq7EeiujcNXtZANgA" name="TalendStringUtil"/>
+    <routinesParameter id="_Js7h0Iq7EeiujcNXtZANgA" name="TalendString"/>
+  </parameters>
+  <node componentName="tPrejob" componentVersion="0.102" offsetLabelX="2" offsetLabelY="4" posX="-64" posY="-320">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tPrejob_1"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+  </node>
+  <node componentName="tRunJob" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="128" posY="-320">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tRunJob_1"/>
+    <elementParameter field="CHECK" name="USE_DYNAMIC_JOB" value="false"/>
+    <elementParameter field="TEXT" name="CONTEXT_JOB" show="false" value=""/>
+    <elementParameter field="PROCESS_TYPE" name="PROCESS" value="ABAC_API_001_PreProcessJob_AM"/>
+    <elementParameter field="TECHNICAL" name="PROCESS:PROCESS_TYPE_CONTEXT" value="Development"/>
+    <elementParameter field="TECHNICAL" name="PROCESS:PROCESS_TYPE_PROCESS" value="GSCV:_txlBUF2nEeyVm4p7dzhUXA"/>
+    <elementParameter field="TECHNICAL" name="PROCESS:PROCESS_TYPE_VERSION" value="Latest"/>
+    <elementParameter field="TEXT" name="CONTEXT_NAME" show="false" value="Default"/>
+    <elementParameter field="CHECK" name="USE_INDEPENDENT_PROCESS" value="false"/>
+    <elementParameter field="CHECK" name="DIE_ON_CHILD_ERROR" value="true"/>
+    <elementParameter field="CHECK" name="TRANSMIT_WHOLE_CONTEXT" value="true"/>
+    <elementParameter field="TABLE" name="CONTEXTPARAMS">
+      <elementValue elementRef="PARAM_NAME_COLUMN" value="JobName"/>
+      <elementValue elementRef="PARAM_VALUE_COLUMN" value="jobName"/>
+    </elementParameter>
+    <elementParameter field="CHECK" name="PROPAGATE_CHILD_RESULT" value="false"/>
+    <elementParameter field="CHECK" name="PRINT_PARAMETER" value="false"/>
+    <elementParameter field="CHECK" name="TRANSMIT_ORIGINAL_CONTEXT" show="false" value="true"/>
+    <elementParameter field="RADIO" name="USE_CHILD_JVM_SETTING" show="false" value="true"/>
+    <elementParameter field="RADIO" name="USE_CUSTOM_JVM_SETTING" show="false" value="false"/>
+    <elementParameter field="TABLE" name="JVM_ARGUMENTS" show="false"/>
+    <elementParameter field="CHECK" name="USE_DYNAMIC_CONTEXT" value="false"/>
+    <elementParameter field="TEXT" name="DYNAMIC_CONTEXT" show="false" value="&quot;&quot;"/>
+    <elementParameter field="CHECK" name="USE_EXTRA_CLASSPATH" show="false" value="false"/>
+    <elementParameter field="TEXT" name="EXTRA_CLASSPATH" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="LABEL" value="__PROCESS__"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tRunJob_1">
+      <column comment="" key="false" length="-1" name="dw_parent_job_ret_id" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="dw_job_id" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="dw_job_audt_prcs_id" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="dw_job_st_audt_prcs_id" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="job_grp_id" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tHashOutput" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="320" posY="-320">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tHashOutput_1"/>
+    <elementParameter field="CHECK" name="LINK_WITH" value="false"/>
+    <elementParameter field="COMPONENT_LIST" name="LIST" show="false" value=""/>
+    <elementParameter field="CLOSED_LIST" name="DATA_WRITE_MODEL" value="MEMORY"/>
+    <elementParameter field="FILE" name="BASE_FILE_PATH" show="false" value="&quot;C:/Users/mc57018/TalendWorkspace/in.hash&quot;"/>
+    <elementParameter field="TEXT" name="MEMORY_HEAP_MAX_SIZE" show="false" value="2"/>
+    <elementParameter field="CLOSED_LIST" name="KEYS_MANAGEMENT" value="KEEP_ALL"/>
+    <elementParameter field="CHECK" name="APPEND" value="true"/>
+    <elementParameter field="CHECK" name="HASH_KEY_FROM_INPUT_CONNECTOR" show="false" value="false"/>
+    <elementParameter field="TEXT" name="LABEL" value="XectIds"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tHashOutput_1">
+      <column comment="" key="false" length="-1" name="dw_parent_job_ret_id" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="dw_job_id" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="dw_job_audt_prcs_id" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="dw_job_st_audt_prcs_id" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="job_grp_id" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tJavaRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="480" posY="-320">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tJavaRow_1"/>
+    <elementParameter field="MEMO_JAVA" name="CODE" value="context.JobRunIdNew = row6.dw_job_id;&#10;context.JobGrpIdNew = row6.job_grp_id;&#10;context.dw_job_id =row6.dw_job_id;&#10;context.dw_job_st_audt_prcs_id =row6.dw_job_st_audt_prcs_id;&#10;&#10;System.out.println(&quot;System.out.println - Job Name -&quot; +jobName+&quot; | JobRunIdNew - &quot;+context.JobRunIdNew + &quot; | JobGrpIdNew -&quot;+context.JobGrpIdNew+&quot; | DW_JOB_ID - &quot; + context.dw_job_id + &quot; | JobState &quot; + context.dw_job_st_audt_prcs_id);&#10;&#10;"/>
+    <elementParameter field="MEMO_IMPORT" name="IMPORT" value="//import java.util.List;"/>
+    <elementParameter field="TEXT" name="LABEL" value="SetContexts"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tJavaRow_1">
+      <column comment="" defaultValue="" key="false" length="-1" name="dw_job_xect_id" nullable="false" originalLength="-1" pattern="" precision="-1" sourceType="BIGINT" type="id_Long" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="job_grp_id" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_Long" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tHashInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="128" posY="-128">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tHashInput_1"/>
+    <elementParameter field="CHECK" name="LINK_WITH" value="true"/>
+    <elementParameter field="COMPONENT_LIST" name="LIST" value="tHashOutput_1"/>
+    <elementParameter field="FILE" name="BASE_FILE_PATH" show="false" value="&quot;C:/Users/mc57018/TalendWorkspace/in.hash&quot;"/>
+    <elementParameter field="CHECK" name="RELEASE_CACHE" value="false"/>
+    <elementParameter field="TEXT" name="LABEL" value="XectIds"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tHashInput_1">
+      <column comment="" key="false" length="-1" name="dw_parent_job_ret_id" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="dw_job_xect_id" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="dw_job_id" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="job_grp_id" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tJavaRow" componentVersion="0.101" offsetLabelX="8" offsetLabelY="-1" posX="288" posY="-128">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tJavaRow_2"/>
+    <elementParameter field="MEMO_JAVA" name="CODE" value="//context.JobGrpId = input_row.job_grp_id;&#13;&#10;&#10;//context.JobRunId = input_row.dw_job_xect_id;&#10;&#10;context.JobStatus = &quot;SUCCEEDED&quot;;&#10;&#10;System.out.println(&quot;GSCV_S77_100_DC_Receipts_OTI_Recon_Child job &quot; + context.JobStatus);&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;"/>
+    <elementParameter field="MEMO_IMPORT" name="IMPORT" value="//import java.util.List;"/>
+    <elementParameter field="TEXT" name="LABEL" value="GetContextsPassRowCounts"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tJavaRow_2">
+      <column comment="" key="false" length="-1" name="dw_parent_job_ret_id" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="dw_job_xect_id" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="dw_job_id" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="job_grp_id" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tRunJob" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="480" posY="-128">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tRunJob_2"/>
+    <elementParameter field="CHECK" name="USE_DYNAMIC_JOB" value="false"/>
+    <elementParameter field="TEXT" name="CONTEXT_JOB" show="false" value=""/>
+    <elementParameter field="PROCESS_TYPE" name="PROCESS" value="ABAC_API_010_PostProcessJob_S3_AM"/>
+    <elementParameter field="TECHNICAL" name="PROCESS:PROCESS_TYPE_CONTEXT" value="Development"/>
+    <elementParameter field="TECHNICAL" name="PROCESS:PROCESS_TYPE_PROCESS" value="GSCV:_srX8UF2pEeyVm4p7dzhUXA"/>
+    <elementParameter field="TECHNICAL" name="PROCESS:PROCESS_TYPE_VERSION" value="Latest"/>
+    <elementParameter field="TEXT" name="CONTEXT_NAME" show="false" value="Default"/>
+    <elementParameter field="CHECK" name="USE_INDEPENDENT_PROCESS" value="false"/>
+    <elementParameter field="CHECK" name="DIE_ON_CHILD_ERROR" value="true"/>
+    <elementParameter field="CHECK" name="TRANSMIT_WHOLE_CONTEXT" value="true"/>
+    <elementParameter field="TABLE" name="CONTEXTPARAMS">
+      <elementValue elementRef="PARAM_NAME_COLUMN" value="JobRunIdNew"/>
+      <elementValue elementRef="PARAM_VALUE_COLUMN" value="context.JobRunIdNew"/>
+      <elementValue elementRef="PARAM_NAME_COLUMN" value="ErrMsg"/>
+      <elementValue elementRef="PARAM_VALUE_COLUMN" value="context.ErrMsg"/>
+      <elementValue elementRef="PARAM_NAME_COLUMN" value="JobStatus"/>
+      <elementValue elementRef="PARAM_VALUE_COLUMN" value="context.JobStatus"/>
+      <elementValue elementRef="PARAM_NAME_COLUMN" value="JobGrpIdNew"/>
+      <elementValue elementRef="PARAM_VALUE_COLUMN" value="context.JobGrpIdNew"/>
+      <elementValue elementRef="PARAM_NAME_COLUMN" value="IsJobMaster"/>
+      <elementValue elementRef="PARAM_VALUE_COLUMN" value="&quot;N&quot;"/>
+      <elementValue elementRef="PARAM_NAME_COLUMN" value="DwDataTypId"/>
+      <elementValue elementRef="PARAM_VALUE_COLUMN" value="&quot;-1&quot;"/>
+      <elementValue elementRef="PARAM_NAME_COLUMN" value="dw_job_stus_typ_id"/>
+      <elementValue elementRef="PARAM_VALUE_COLUMN" value="&quot;2&quot;"/>
+      <elementValue elementRef="PARAM_NAME_COLUMN" value="dw_job_st_audt_prcs_id"/>
+      <elementValue elementRef="PARAM_VALUE_COLUMN" value="context.dw_job_st_audt_prcs_id"/>
+    </elementParameter>
+    <elementParameter field="CHECK" name="PROPAGATE_CHILD_RESULT" value="false"/>
+    <elementParameter field="CHECK" name="PRINT_PARAMETER" value="false"/>
+    <elementParameter field="CHECK" name="TRANSMIT_ORIGINAL_CONTEXT" show="false" value="true"/>
+    <elementParameter field="RADIO" name="USE_CHILD_JVM_SETTING" show="false" value="true"/>
+    <elementParameter field="RADIO" name="USE_CUSTOM_JVM_SETTING" show="false" value="false"/>
+    <elementParameter field="TABLE" name="JVM_ARGUMENTS" show="false"/>
+    <elementParameter field="CHECK" name="USE_DYNAMIC_CONTEXT" value="false"/>
+    <elementParameter field="TEXT" name="DYNAMIC_CONTEXT" show="false" value="&quot;&quot;"/>
+    <elementParameter field="CHECK" name="USE_EXTRA_CLASSPATH" show="false" value="false"/>
+    <elementParameter field="TEXT" name="EXTRA_CLASSPATH" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="LABEL" value="__PROCESS__"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tRunJob_2"/>
+  </node>
+  <node componentName="tRunJob" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="-64" posY="-32">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tRunJob_3"/>
+    <elementParameter field="CHECK" name="USE_DYNAMIC_JOB" value="false"/>
+    <elementParameter field="TEXT" name="CONTEXT_JOB" show="false" value=""/>
+    <elementParameter field="PROCESS_TYPE" name="PROCESS" value="GSCV_S77_100_DC_Receipts_OTI_Recon_Child"/>
+    <elementParameter field="TECHNICAL" name="PROCESS:PROCESS_TYPE_CONTEXT" value="Development"/>
+    <elementParameter field="TECHNICAL" name="PROCESS:PROCESS_TYPE_PROCESS" value="GSCV:_X0uA0NEIEeyLgOe9U2Y7gg"/>
+    <elementParameter field="TECHNICAL" name="PROCESS:PROCESS_TYPE_VERSION" value="Latest"/>
+    <elementParameter field="TEXT" name="CONTEXT_NAME" show="false" value="Default"/>
+    <elementParameter field="CHECK" name="USE_INDEPENDENT_PROCESS" value="false"/>
+    <elementParameter field="CHECK" name="DIE_ON_CHILD_ERROR" value="true"/>
+    <elementParameter field="CHECK" name="TRANSMIT_WHOLE_CONTEXT" value="true"/>
+    <elementParameter field="TABLE" name="CONTEXTPARAMS">
+      <elementValue elementRef="PARAM_NAME_COLUMN" value="JobMasterName"/>
+      <elementValue elementRef="PARAM_VALUE_COLUMN" value="&quot;GSCV_S77_DC_Receipts_OTI_Recon_Master&quot;"/>
+      <elementValue elementRef="PARAM_NAME_COLUMN" value="JobGrpIdNew"/>
+      <elementValue elementRef="PARAM_VALUE_COLUMN" value="context.JobGrpIdNew"/>
+      <elementValue elementRef="PARAM_NAME_COLUMN" value="DwDataTypId"/>
+      <elementValue elementRef="PARAM_VALUE_COLUMN" value="&quot;-1&quot;"/>
+    </elementParameter>
+    <elementParameter field="CHECK" name="PROPAGATE_CHILD_RESULT" value="false"/>
+    <elementParameter field="CHECK" name="PRINT_PARAMETER" value="false"/>
+    <elementParameter field="CHECK" name="TRANSMIT_ORIGINAL_CONTEXT" show="false" value="true"/>
+    <elementParameter field="RADIO" name="USE_CHILD_JVM_SETTING" show="false" value="true"/>
+    <elementParameter field="RADIO" name="USE_CUSTOM_JVM_SETTING" show="false" value="false"/>
+    <elementParameter field="TABLE" name="JVM_ARGUMENTS" show="false"/>
+    <elementParameter field="CHECK" name="USE_DYNAMIC_CONTEXT" value="false"/>
+    <elementParameter field="TEXT" name="DYNAMIC_CONTEXT" show="false" value="&quot;&quot;"/>
+    <elementParameter field="CHECK" name="USE_EXTRA_CLASSPATH" show="false" value="false"/>
+    <elementParameter field="TEXT" name="EXTRA_CLASSPATH" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="LABEL" value="__PROCESS__"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tRunJob_3">
+      <column comment="" key="false" length="-1" name="nofile" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_Integer" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tHashInput" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="128" posY="64">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tHashInput_2"/>
+    <elementParameter field="CHECK" name="LINK_WITH" value="true"/>
+    <elementParameter field="COMPONENT_LIST" name="LIST" value="tHashOutput_1"/>
+    <elementParameter field="FILE" name="BASE_FILE_PATH" show="false" value="&quot;C:/Users/mc57018/TalendWorkspace/in.hash&quot;"/>
+    <elementParameter field="CHECK" name="RELEASE_CACHE" value="false"/>
+    <elementParameter field="TEXT" name="LABEL" value="XectIds"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tHashInput_2">
+      <column comment="" key="false" length="-1" name="dw_parent_job_ret_id" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="dw_job_xect_id" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="dw_job_id" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="job_grp_id" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tJavaRow" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="288" posY="64">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tJavaRow_3"/>
+    <elementParameter field="MEMO_JAVA" name="CODE" value="//context.JobGrpIdNew = input_row.job_grp_id;&#10;&#10;//context.JobRunIdNew = input_row.dw_job_xect_id;&#10;&#10;context.ErrMsg = ((String)globalMap.get(&quot;tRunJob_3_CHILD_EXCEPTION_STACKTRACE&quot;));&#10;&#10;context.JobStatus = &quot;FAILED&quot;;&#10;&#10;System.out.println(&quot;GSCV_S77_100_DC_Receipts_OTI_Recon_Child job &quot;+ context.JobStatus);&#10;&#10;&#10;"/>
+    <elementParameter field="MEMO_IMPORT" name="IMPORT" value="//import java.util.List;"/>
+    <elementParameter field="TEXT" name="LABEL" value="GetContextsPassRowCounts"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tJavaRow_3">
+      <column comment="" key="false" length="-1" name="dw_parent_job_ret_id" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="dw_job_xect_id" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="dw_job_id" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="job_grp_id" nullable="true" originalLength="-1" pattern="" precision="-1" sourceType="" type="id_String" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tRunJob" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="480" posY="64">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tRunJob_4"/>
+    <elementParameter field="CHECK" name="USE_DYNAMIC_JOB" value="false"/>
+    <elementParameter field="TEXT" name="CONTEXT_JOB" show="false" value=""/>
+    <elementParameter field="PROCESS_TYPE" name="PROCESS" value="ABAC_API_010_PostProcessJob_S3_AM"/>
+    <elementParameter field="TECHNICAL" name="PROCESS:PROCESS_TYPE_CONTEXT" value="Development"/>
+    <elementParameter field="TECHNICAL" name="PROCESS:PROCESS_TYPE_PROCESS" value="GSCV:_srX8UF2pEeyVm4p7dzhUXA"/>
+    <elementParameter field="TECHNICAL" name="PROCESS:PROCESS_TYPE_VERSION" value="Latest"/>
+    <elementParameter field="TEXT" name="CONTEXT_NAME" show="false" value="Default"/>
+    <elementParameter field="CHECK" name="USE_INDEPENDENT_PROCESS" value="false"/>
+    <elementParameter field="CHECK" name="DIE_ON_CHILD_ERROR" value="true"/>
+    <elementParameter field="CHECK" name="TRANSMIT_WHOLE_CONTEXT" value="true"/>
+    <elementParameter field="TABLE" name="CONTEXTPARAMS">
+      <elementValue elementRef="PARAM_NAME_COLUMN" value="JobRunIdNew"/>
+      <elementValue elementRef="PARAM_VALUE_COLUMN" value="context.JobRunIdNew"/>
+      <elementValue elementRef="PARAM_NAME_COLUMN" value="ErrMsg"/>
+      <elementValue elementRef="PARAM_VALUE_COLUMN" value="context.ErrMsg"/>
+      <elementValue elementRef="PARAM_NAME_COLUMN" value="JobStatus"/>
+      <elementValue elementRef="PARAM_VALUE_COLUMN" value="context.JobStatus"/>
+      <elementValue elementRef="PARAM_NAME_COLUMN" value="JobGrpIdNew"/>
+      <elementValue elementRef="PARAM_VALUE_COLUMN" value="context.JobGrpIdNew"/>
+      <elementValue elementRef="PARAM_NAME_COLUMN" value="IsJobMaster"/>
+      <elementValue elementRef="PARAM_VALUE_COLUMN" value="&quot;N&quot;"/>
+      <elementValue elementRef="PARAM_NAME_COLUMN" value="DwDataTypId"/>
+      <elementValue elementRef="PARAM_VALUE_COLUMN" value="&quot;-1&quot;"/>
+      <elementValue elementRef="PARAM_NAME_COLUMN" value="dw_job_stus_typ_id"/>
+      <elementValue elementRef="PARAM_VALUE_COLUMN" value="&quot;3&quot;"/>
+      <elementValue elementRef="PARAM_NAME_COLUMN" value="dw_job_stus_typ_ds"/>
+      <elementValue elementRef="PARAM_VALUE_COLUMN" value="&quot;FAILURE&quot;"/>
+      <elementValue elementRef="PARAM_NAME_COLUMN" value="dw_job_st_audt_prcs_id"/>
+      <elementValue elementRef="PARAM_VALUE_COLUMN" value="context.dw_job_st_audt_prcs_id"/>
+    </elementParameter>
+    <elementParameter field="CHECK" name="PROPAGATE_CHILD_RESULT" value="false"/>
+    <elementParameter field="CHECK" name="PRINT_PARAMETER" value="false"/>
+    <elementParameter field="CHECK" name="TRANSMIT_ORIGINAL_CONTEXT" show="false" value="true"/>
+    <elementParameter field="RADIO" name="USE_CHILD_JVM_SETTING" show="false" value="true"/>
+    <elementParameter field="RADIO" name="USE_CUSTOM_JVM_SETTING" show="false" value="false"/>
+    <elementParameter field="TABLE" name="JVM_ARGUMENTS" show="false"/>
+    <elementParameter field="CHECK" name="USE_DYNAMIC_CONTEXT" value="false"/>
+    <elementParameter field="TEXT" name="DYNAMIC_CONTEXT" show="false" value="&quot;&quot;"/>
+    <elementParameter field="CHECK" name="USE_EXTRA_CLASSPATH" show="false" value="false"/>
+    <elementParameter field="TEXT" name="EXTRA_CLASSPATH" show="false" value="&quot;&quot;"/>
+    <elementParameter field="TEXT" name="LABEL" value="__PROCESS__"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tRunJob_4"/>
+  </node>
+  <node componentName="tDie" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="704" posY="64">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDie_1"/>
+    <elementParameter field="TEXT" name="MESSAGE" value="&quot;GSCV_S77_100_DC_Receipts_OTI_Recon_Child FAILED&quot;"/>
+    <elementParameter field="TEXT" name="CODE" value="4"/>
+    <elementParameter field="CLOSED_LIST" name="PRIORITY" value="5"/>
+    <elementParameter field="CHECK" name="EXIT_JVM" value="false"/>
+    <elementParameter field="TEXT" name="LABEL" value="DIE"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tDie_1"/>
+  </node>
+  <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" metaname="tPrejob_1" offsetLabelX="0" offsetLabelY="0" source="tPrejob_1" target="tRunJob_1">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnComponentOk1"/>
+  </connection>
+  <connection connectorName="FLOW" label="row2" lineStyle="0" metaname="tRunJob_1" offsetLabelX="0" offsetLabelY="0" source="tRunJob_1" target="tHashOutput_1">
+    <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" show="false">
+      <elementValue elementRef="TRACE_COLUMN" value="dw_job_st_audt_prcs_id"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="dw_job_id"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="dw_parent_job_ret_id"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="dw_job_audt_prcs_id"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+    </elementParameter>
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row2"/>
+  </connection>
+  <connection connectorName="FLOW" label="row6" lineStyle="0" metaname="tHashOutput_1" offsetLabelX="0" offsetLabelY="0" source="tHashOutput_1" target="tJavaRow_1">
+    <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" show="false">
+      <elementValue elementRef="TRACE_COLUMN" value="dw_job_st_audt_prcs_id"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="dw_job_id"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="dw_parent_job_ret_id"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+    </elementParameter>
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row6"/>
+  </connection>
+  <connection connectorName="FLOW" label="row4" lineStyle="0" metaname="tHashInput_1" offsetLabelX="0" offsetLabelY="0" source="tHashInput_1" target="tJavaRow_2">
+    <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" show="false">
+      <elementValue elementRef="TRACE_COLUMN" value="dw_job_xect_id"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="job_tgt_obj"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="job_grp_id"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="dw_job_id"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="dw_parent_job_ret_id"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="dw_job_xect_id"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+    </elementParameter>
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row4"/>
+  </connection>
+  <connection connectorName="FLOW" label="row9" lineStyle="0" metaname="tJavaRow_2" offsetLabelX="0" offsetLabelY="0" source="tJavaRow_2" target="tRunJob_2">
+    <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" show="false">
+      <elementValue elementRef="TRACE_COLUMN" value="job_grp_id"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="dw_job_id"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="dw_parent_job_ret_id"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="dw_job_xect_id"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+    </elementParameter>
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row9"/>
+  </connection>
+  <connection connectorName="SUBJOB_ERROR" label="OnSubjobError" lineStyle="4" metaname="tRunJob_3" offsetLabelX="0" offsetLabelY="0" source="tRunJob_3" target="tHashInput_2">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnSubjobError1"/>
+  </connection>
+  <connection connectorName="SUBJOB_OK" label="OnSubjobOk" lineStyle="1" metaname="tRunJob_3" offsetLabelX="0" offsetLabelY="0" source="tRunJob_3" target="tHashInput_1">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnSubjobOk2"/>
+  </connection>
+  <connection connectorName="FLOW" label="row7_0" lineStyle="0" metaname="tHashInput_2" offsetLabelX="0" offsetLabelY="0" source="tHashInput_2" target="tJavaRow_3">
+    <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" show="false">
+      <elementValue elementRef="TRACE_COLUMN" value="dw_job_xect_id"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="job_tgt_obj"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="job_grp_id"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="dw_job_id"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="dw_parent_job_ret_id"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+      <elementValue elementRef="TRACE_COLUMN" value="dw_job_xect_id"/>
+      <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
+      <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
+    </elementParameter>
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row7_0"/>
+  </connection>
+  <connection connectorName="FLOW" label="row11" lineStyle="0" metaname="tJavaRow_3" offsetLabelX="0" offsetLabelY="0" source="tJavaRow_3" target="tRunJob_4">
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="row11"/>
+  </connection>
+  <connection connectorName="COMPONENT_OK" label="OnComponentOk" lineStyle="3" metaname="tRunJob_4" offsetLabelX="0" offsetLabelY="0" source="tRunJob_4" target="tDie_1">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="OnComponentOk4"/>
+  </connection>
+  <subjob>
+    <elementParameter field="CHECK" name="SHOW_SUBJOB_TITLE" value="true"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tPrejob_1"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" value="230;100;0"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="255;220;180"/>
+  </subjob>
+  <subjob>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tRunJob_1"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+  </subjob>
+  <subjob>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tHashInput_1"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+  </subjob>
+  <subjob>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tRunJob_3"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+  </subjob>
+  <subjob>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tHashInput_2"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+  </subjob>
+  <subjob>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" show="false" value="tDie_1"/>
+    <elementParameter field="COLOR" name="SUBJOB_TITLE_COLOR" show="false" value="92;131;150"/>
+    <elementParameter field="COLOR" name="SUBJOB_COLOR" value="207;226;236"/>
+  </subjob>
+<Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="_ecaa13b3-e965-4b7c-8ace-24e29a45f508"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/><SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"/><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>LZelbEya5dF/29cgQMa+S8Pmj8FK1FqLR2DAd7SMTLhbYhYcLdR4/IftGiBRcc0LQOD82TgJEjAf&#13;
+2FXcQA+ynw==</DigestValue></Reference><Reference Type="http://www.w3.org/2000/09/xmldsig#SignatureProperties" URI="#_aadf8700-882d-4088-aaa9-baa405d3eab1"><Transforms><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/></Transforms><DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha512"/><DigestValue>smGMJ4u9B68ki8f0+Rdr7m7UGJxohweSvgxynoK9oCYK00PgrNi9cnjw4kBByRJx3mxP8sjKcckQ&#13;
+Jh255DndQA==</DigestValue></Reference></SignedInfo><SignatureValue>TjG6Z6baTncehKR9RaVd/orqAZ0y68wDdUXWu9VcQKlgNxaCa+uVHgJeZ1oirsLcFawSwIn0fzku&#13;
+tGgX9AB0rabldfqqHa2u7BKxwUzXs3UA9zrnHLrkS+jOPeicFy215/nKHQxNvbYyJSxfR1EesYhF&#13;
+nj0Pru+ixclaB3Lgyjn6gn6yn196nEpZkukyDiqhkFMqD866nWVkeSHGRsv6KLtCmxqoUufwsOE2&#13;
+zL67nYd9cvjJ5jX6wqi7THYh6XBqxhQpYLU8njP92MJzf65MtkLIOttMXbzWVtHk2CmqLUB4blQv&#13;
+Y/uctDM/b7lpY0yEiwFWFnYR+D2YIFqEqcASng==</SignatureValue><KeyInfo><X509Data><X509SubjectName>C=FR,ST=Paris,L=Paris,O=Talend Inc.,OU=R&amp;D,CN=Talend Code Signing certificate</X509SubjectName><X509Certificate>MIIFADCCAuigAwIBAgIIA2OsD6bRyj0wDQYJKoZIhvcNAQELBQAwgY0xCzAJBgNVBAYTAkZSMQ4w&#13;
+DAYDVQQIEwVQYXJpczEOMAwGA1UEBxMFUGFyaXMxFDASBgNVBAoTC1RhbGVuZCBJbmMuMQwwCgYD&#13;
+VQQLDANSJkQxFjAUBgNVBAMMDVRhbGVuZCBSJkQgQ0ExIjAgBgkqhkiG9w0BCQEWE3NlY3VyaXR5&#13;
+QHRhbGVuZC5jb20wHhcNMTkwNjAzMDgxODIwWhcNMjkwNjAzMDAwMDAwWjB7MSgwJgYDVQQDEx9U&#13;
+YWxlbmQgQ29kZSBTaWduaW5nIGNlcnRpZmljYXRlMQwwCgYDVQQLDANSJkQxFDASBgNVBAoTC1Rh&#13;
+bGVuZCBJbmMuMQ4wDAYDVQQHEwVQYXJpczEOMAwGA1UECBMFUGFyaXMxCzAJBgNVBAYTAkZSMIIB&#13;
+IjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAp5TMF8BmRt8dY51t9kIDdDkoOKVVytJN2gn2&#13;
+DhMGi8hzpUofNDykJDhe9SPqyJdGZ6o/h7laTA0/CivKyPT1OJQ9E2gMHKs8cTZM/cO2w0Atlqkl&#13;
+alIxepol0DNnUtmECVBqdnVsJesfmdoeptxgJAtxYbquFsTsrATNY2cscXpwmOca/Ewip48WQLFx&#13;
+e5s067jaIsAQGRIqpIup3bOtWBySrtImJ40lQCPeEcl96qzkv3utaVaNc3ukkhYkCDbMbK8NVd1B&#13;
+CVeeIBAe+n/SdpHH20o+6eIiZecsBGDLwlTYrFvuVqAa6xI7y8Vdz6irjPAVBEtG/iOc782aJ/lZ&#13;
+TwIDAQABo3UwczAMBgNVHRMBAf8EAjAAMA4GA1UdDwEB/wQEAwIHgDATBgNVHSUEDDAKBggrBgEF&#13;
+BQcDAzAdBgNVHQ4EFgQUGdfzQEbjQnANq28sfhEMTx+rsOcwHwYDVR0jBBgwFoAU530Lcvy1gZnG&#13;
+gCvZLOyCczK1qPcwDQYJKoZIhvcNAQELBQADggIBAEr22wnaQwZm2dhbUCqD+qZpTq2AF/tzxqAM&#13;
+eL/CiTjPbTblS4SNNwCKvTgMe9ucpUbenXmK7xE+DU9dN4om+t3VHbkOLQVyuLcd2WGsy7ZGwRvA&#13;
+f+TFwLbwjyTukOGm6Sd1qyZgvCPzBsKnft6vscvGy2yEpmFCeHJyBP8pvchg607zguRdNbkGYZXw&#13;
+G6jNipAbTtzdPTFKKr1bEf0sUGqMrlZIMPjflh2Vewu8ImNdX5IZdvBD6DdFVOC5wqV6u+W9ukE/&#13;
+mXZxDBYNl2AF7FTh04ucEVN3mHv7m2L0uFvUlhxchcagJhJsdQG+A0LVCemHbp6CSNQJx02KxqUG&#13;
+hakvpzhOyLo91h8YAQrEZJdNuKA8IYmBrFZQZDCz0uywKSyFfzPyJhvxylCLG/iDPPfE0VWcrMJ/&#13;
+WQJly/2XPg/NBCTF3pSKS0kCiA7PeaI3cWkMYYA3PMwYDvzqs1opBRglG7ikj0bQxSm3lcjMuuvW&#13;
+gBRksFKjP3K/nztsjSoYITOM9jR29ReIL3v0E8RbAFwA2RGq6Dxd0ixfbucMesy5Gnr8tfYy6rW+&#13;
+qSQqd3ah4+PSzBNVwIB4ytpdrG3SlhCI2i2Th8ek8Sjsaquh9qPAerWNd2+84HWOOGj1Xe1qc6vg&#13;
+qqu6JoK9EXKDiwBqDVkueIa+MhamE1VDnhn2pPui</X509Certificate></X509Data></KeyInfo><Object><SignatureProperties><SignatureProperty Id="_aadf8700-882d-4088-aaa9-baa405d3eab1" Target="#_ecaa13b3-e965-4b7c-8ace-24e29a45f508"><Timestamp>2025-02-12 08:32:42</Timestamp></SignatureProperty></SignatureProperties></Object></Signature></talendfile:ProcessType>

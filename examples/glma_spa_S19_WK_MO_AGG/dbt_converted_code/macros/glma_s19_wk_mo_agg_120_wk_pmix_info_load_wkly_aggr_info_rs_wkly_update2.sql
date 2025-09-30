@@ -1,0 +1,57 @@
+{% macro update_part2() %}
+
+-- MERGE for update + insert
+MERGE INTO {{ var('Redshift_gdap_Schema') }}.WKLY_AGGR_INFO AS target
+USING {{ var('Redshift_gdap_Utility') }}.WKLY_AGGR_INFO_PMIX AS src
+ON target.WK_END_THU_ID_NU = src.WK_END_THU_ID_NU
+   AND target.MCD_GBAL_LCAT_ID_NU = src.MCD_GBAL_LCAT_ID_NU
+
+WHEN MATCHED THEN
+  UPDATE SET
+    WKLY_AGGR_PMIX_DY_CNT_QT = src.WKLY_AGGR_PMIX_DY_CNT_QT,
+    AGGR_PMIX_NON_REPT_HLDY_QT = src.AGGR_PMIX_NON_REPT_HLDY_QT,
+    WKLY_AGGR_PMIX_7DY_RULE_FL = src.WKLY_AGGR_PMIX_7DY_RULE_FL,
+    UPDT_DW_AUDT_TS = CAST(CURRENT_TIMESTAMP() AS DATETIME)
+
+WHEN NOT MATCHED THEN
+  INSERT (
+    WK_END_THU_ID_NU,
+    MCD_GBAL_LCAT_ID_NU,
+    WKLY_AGGR_PMIX_DY_CNT_QT,
+    AGGR_PMIX_NON_REPT_HLDY_QT,
+    WKLY_AGGR_PMIX_7DY_RULE_FL,
+    WKLY_AGGR_SLS_7DY_RULE_FL,
+    WKLY_AGGR_DYPT_7DY_RULE_FL
+  )
+  VALUES (
+    src.WK_END_THU_ID_NU,
+    src.MCD_GBAL_LCAT_ID_NU,
+    src.WKLY_AGGR_PMIX_DY_CNT_QT,
+    src.AGGR_PMIX_NON_REPT_HLDY_QT,
+    src.WKLY_AGGR_PMIX_7DY_RULE_FL,
+    0,
+    0
+  );
+
+-- DELETE rows with null flags
+DELETE FROM {{ var('Redshift_gdap_Schema') }}.WKLY_AGGR_INFO
+WHERE WK_END_THU_ID_NU IN (
+  SELECT DISTINCT WK_END_THU_ID_NU
+  FROM {{ var('Redshift_gdap_Schema') }}.cal_dt
+  CROSS JOIN (
+    SELECT
+      DATE(wk_from_dt) AS wk_from_dt,
+      DATE(wk_to_dt) AS wk_to_dt
+    FROM {{ source('RMDW_RAW','JS_IN_PARMS_AND_MAX_CALDT_psv') }}
+    LIMIT 1
+  ) parms
+  WHERE cal_dt.cal_dt BETWEEN parms.wk_from_dt AND parms.wk_to_dt
+)
+AND WKLY_AGGR_PMIX_DY_CNT_QT IS NULL
+AND WKLY_AGGR_SLS_DY_CNT_QT IS NULL
+AND WKLY_DYPT_SLS_DY_CNT_QT IS NULL
+AND AGGR_PMIX_NON_REPT_HLDY_QT IS NULL
+AND AGGR_SLS_NON_REPT_HLDY_QT IS NULL
+AND AGGR_DYPT_NON_REPT_HLDY_QT IS NULL;
+
+{% endmacro %}

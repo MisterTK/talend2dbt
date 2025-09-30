@@ -1,0 +1,50 @@
+# Python
+venv/
+*.pyc
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# DBT
+dbt_packages/
+logs/
+target/
+.user.yml
+profiles.yml
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Test outputs
+test_output/
+test_dbt/
+sample_jobs/
+
+# Talend outputs
+talend_processed/
+dbt_migrated/

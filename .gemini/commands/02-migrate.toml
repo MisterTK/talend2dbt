@@ -1,0 +1,687 @@
+description = "Complete Talend to DBT migration with 98%+ SQL generation from pre-processed Talend output"
+
+prompt = """
+# Talend to DBT Migration Engine
+
+You are an expert data engineer implementing a complete Talend to DBT migration for BigQuery. You will generate a production-ready DBT project with 98%+ SQL generation and 100% business logic preservation from pre-processed Talend output.
+
+## Command Invocation
+
+The user invoked: `/02-migrate {{args}}`
+
+**Expected Arguments:**
+- `<processed_talend_path>` (required): Path to directory containing pre-processed Talend output files
+- `[output_path]` (optional): Output directory for DBT project (default: `<processed_talend_path>/../dbt_migrated`)
+
+Parse the arguments to extract:
+- First argument (required): processed_talend_path
+- Second argument (optional): output_path
+
+## Input Directory Structure
+
+The source directory contains pre-processed Talend job information:
+```
+input_directory/
+├── talend_extraction.json    # Complete job structure and components
+├── sql_queries.sql           # All extracted SQL from tDBInput/tDBOutput
+├── transformations.json      # tMap business logic and expressions
+├── context_to_dbt.yml        # Context variable mappings
+└── extraction_summary.txt    # Migration overview and statistics
+```
+
+---
+
+## 📖 CRITICAL: Migration Standards Reference
+
+**Standards files are located in the `standards/` directory at the project root. Use the Read tool to load the appropriate file for each phase:**
+
+- **Architecture & Layers:** `standards/01_architecture.md`
+- **Naming Conventions:** `standards/02_naming_conventions.md`
+- **Model Consolidation:** `standards/03_model_consolidation.md`
+- **SQL Generation:** `standards/04_sql_generation.md`
+- **Component Mapping:** `standards/05_component_mapping.md`
+- **Context Variables:** `standards/06_context_variables.md`
+- **File Organization:** `standards/07_file_organization.md`
+- **Materialization:** `standards/08_materialization.md`
+- **Dependencies:** `standards/09_dependencies.md`
+- **Quality & Validation:** `standards/10_quality_validation.md`
+- **Error Handling:** `standards/11_error_handling.md`
+- **Performance:** `standards/12_performance.md`
+- **Constraints:** `standards/13_constraints.md`
+
+**IMPORTANT:** These are relative paths from the project root. Load the relevant standards file using the Read tool when you reach each phase. All code generation, naming decisions, and consolidation logic MUST comply with these standards.
+
+---
+
+## Mission Statement
+
+Transform Talend ETL jobs into production-ready DBT models that:
+- Generate **98%+ complete SQL** (not placeholders)
+- Preserve **100% of business logic** and data transformations
+- Reduce model count by **70-85%** through intelligent consolidation
+- Require **<2% manual intervention** post-migration
+- Run immediately on **BigQuery with latest 2025 features**
+
+---
+
+## Phase 1: Initial Analysis & Extraction
+
+### Step 1: Verify Input Files
+
+Verify all required input files exist:
+
+```bash
+# List all files in the input directory
+ls -la <processed_talend_path>/
+
+# Verify all 5 required files are present
+[ -f "<processed_talend_path>/talend_extraction.json" ] || echo "ERROR: Missing talend_extraction.json"
+[ -f "<processed_talend_path>/sql_queries.sql" ] || echo "ERROR: Missing sql_queries.sql"
+[ -f "<processed_talend_path>/transformations.json" ] || echo "ERROR: Missing transformations.json"
+[ -f "<processed_talend_path>/context_to_dbt.yml" ] || echo "ERROR: Missing context_to_dbt.yml"
+[ -f "<processed_talend_path>/extraction_summary.txt" ] || echo "ERROR: Missing extraction_summary.txt"
+```
+
+**If any file is missing, STOP and report error.**
+
+### Step 2: Load and Parse Input Data
+
+Read all input files using the Read tool:
+- talend_extraction.json - Complete job structure
+- sql_queries.sql - All extracted SQL
+- transformations.json - tMap business logic
+- context_to_dbt.yml - Variable mappings
+- extraction_summary.txt - Migration overview
+
+### Step 3: Analyze Job Structure
+
+📖 **Load `standards/03_model_consolidation.md` for complete consolidation strategy**
+
+**Classify all jobs using the consolidation decision tree:**
+
+1. **Identify Orchestrator Jobs** (DO NOT CONSOLIDATE):
+   - Jobs with `has_child_jobs = true` (contain tRunJob components)
+   - Role: Grandmaster or Master
+   - Action: Document orchestration in comments, generate NO SQL models
+
+2. **Identify Transaction Groups** (PRESERVE AS ATOMIC MODELS):
+   - Jobs with tDBConnection → operations → tDBCommit/tDBRollback
+   - Action: One model per transaction group (atomic boundary)
+
+3. **Identify Error/Audit Flows** (SEPARATE MODELS):
+   - Jobs with reject flows (tFilterRow REJECT branch, tDie, tWarn)
+   - Action: Create separate `[model_name]_rejects.sql` for audit
+
+4. **Identify Processor Jobs** (SAFE TO CONSOLIDATE):
+   - Child jobs with data transformations (tMap, tFilter, tAggregate, etc.)
+   - No tRunJob calls, no transaction boundaries, no error flows
+   - Action: Apply consolidation rules to reduce model count
+
+**Document job hierarchy and dependencies:**
+- Map ALL parent-child relationships (tRunJob references)
+- Identify ALL cross-job lookups (dimension references)
+- Preserve ALL dependencies as DBT `ref()` relationships
+
+### Step 4: Extract Domains for Naming
+
+📖 **Load `standards/02_naming_conventions.md` for domain extraction rules**
+
+**Apply domain extraction patterns to ALL jobs:**
+
+1. **From Talend Job Names**:
+   - Pattern: `[PROJECT_CODE]_[Entity]_[Type]_[Job]` → extract `project_code` as domain
+   - Pattern: `[PROJECT]_[Module]_[Entity]` → extract `project_module` as domain
+   - Pattern: `Master_[Domain]_[Action]` → extract `domain` as domain
+
+2. **From Talend Folder Hierarchy**:
+   - Path: `workspace/PROJECT_NAME/process/Jobs/job.item` → extract `project_name` as domain
+
+3. **Domain Validation**:
+   - Ensure all jobs have an extracted domain
+   - If no pattern matches → flag as `domain: default` for manual review
+   - Convert domain names to lowercase snake_case
+
+Create a domain mapping table for all jobs.
+
+### Step 5: Detect Layer Assignments
+
+📖 **Reference `standards/02_naming_conventions.md` for layer detection patterns**
+
+**Assign each job to a layer (staging/intermediate/marts):**
+
+1. **Staging Detection** (→ `stg_[domain]__[source].sql`):
+   - Job name contains: "LOAD", "EXTRACT", "SOURCE", "RAW"
+   - Job has only tDBInput + minimal tMap (type casting only)
+
+2. **Intermediate Detection** (→ `int_[domain]__[transformation].sql`):
+   - Job name contains: "TRANSFORM", "PROCESS", "ENRICH", "CLEANSE"
+   - Job has tMap with complex expressions, joins, filters, aggregations
+
+3. **Dimension Detection** (→ `dim_[entity].sql`):
+   - Job name contains: "DIM", "DIMENSION", "LKP", "LOOKUP", "_D_"
+
+4. **Fact Detection** (→ `fct_[entity].sql`):
+   - Job name contains: "FACT", "TRN", "TRANSACTION", "_F_", "METRICS"
+
+### Step 6: Pre-Generation Validation
+
+📖 **Load `standards/10_quality_validation.md` for pre-generation validation checks**
+
+Run ALL validation checks:
+- Check 1: Input file completeness
+- Check 2: Extraction quality (jobs > 0, SQL queries > 0, tables > 0)
+- Check 3: Domain extraction (all jobs have domains)
+- Check 4: Consolidation feasibility (processors identified)
+
+Display validation summary with counts.
+
+**If any validation fails, STOP migration and report specific error.**
+
+---
+
+## Phase 2: DBT Project Generation
+
+### Step 1: Create DBT Project Structure
+
+📖 **Load `standards/07_file_organization.md` for complete directory structure**
+
+Determine output directory and create the complete structure:
+
+```bash
+# Set output directory (use second argument if provided, otherwise default)
+OUTPUT_DIR="<output_path or default>"
+mkdir -p "$OUTPUT_DIR"
+
+# Create medallion architecture folders
+mkdir -p "$OUTPUT_DIR/models/staging"
+mkdir -p "$OUTPUT_DIR/models/intermediate"
+mkdir -p "$OUTPUT_DIR/models/marts"
+mkdir -p "$OUTPUT_DIR/macros"
+mkdir -p "$OUTPUT_DIR/tests/generic"
+mkdir -p "$OUTPUT_DIR/tests/singular"
+mkdir -p "$OUTPUT_DIR/docs"
+
+# Create domain-specific subfolders (one per unique domain)
+for domain in <list_of_domains>; do
+    mkdir -p "$OUTPUT_DIR/models/staging/$domain"
+    mkdir -p "$OUTPUT_DIR/models/intermediate/$domain"
+    mkdir -p "$OUTPUT_DIR/models/marts/$domain"
+done
+```
+
+### Step 2: Generate dbt_project.yml
+
+Create the DBT project configuration file with this exact structure:
+
+```yaml
+name: 'talend_migration'
+version: '1.0.0'
+config-version: 2
+
+profile: 'bigquery'
+
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+
+target-path: "target"
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+models:
+  talend_migration:
+    staging:
+      +materialized: view
+    intermediate:
+      +materialized: table
+    marts:
+      +materialized: table
+      +partition_by:
+        field: created_date
+        data_type: date
+        granularity: day
+```
+
+### Step 3: Generate profiles.yml
+
+Create the BigQuery connection profile with this exact structure:
+
+```yaml
+bigquery:
+  target: dev
+  outputs:
+    dev:
+      type: bigquery
+      method: oauth
+      project: "{{ env_var('GCP_PROJECT_ID', 'your-project-id') }}"
+      dataset: "{{ env_var('GCP_DATASET', 'dbt_dev') }}"
+      threads: 4
+      timeout_seconds: 300
+      location: US
+      priority: interactive
+
+    prod:
+      type: bigquery
+      method: oauth
+      project: "{{ env_var('GCP_PROJECT_ID', 'your-project-id') }}"
+      dataset: "{{ env_var('GCP_DATASET', 'dbt_prod') }}"
+      threads: 8
+      timeout_seconds: 600
+      location: US
+      priority: batch
+```
+
+---
+
+## Phase 3: Staging Layer Generation (Bronze)
+
+📖 **Load `standards/01_architecture.md` for STAGING layer responsibilities**
+
+### Step 1: Generate _sources.yml
+
+📖 **Reference `standards/07_file_organization.md` for _sources.yml format**
+
+Define ALL source tables from tDBInput components in models/staging/_sources.yml.
+
+For each unique table found in tDBInput components, create a source definition with:
+- Table name
+- Description from Talend component
+- Column definitions with appropriate tests (not_null, unique, relationships)
+
+**✅ CRITICAL**: ALL tables referenced in ANY tDBInput component MUST be defined in _sources.yml
+
+### Step 2: Generate Staging Models
+
+📖 **Load `standards/04_sql_generation.md` for SQL generation standards**
+
+For each source table, create a staging model:
+
+**Naming**: `stg_[domain]__[table_name].sql`
+
+**Template Structure**:
+- Use config block with materialized='view'
+- Add Talend source comment
+- Create source_data CTE selecting from source()
+- Use SAFE_CAST for all type conversions
+- NO business logic, NO joins, NO filtering
+- Final SELECT * FROM source_data
+
+**✅ Staging Layer Rules**:
+- ✅ Load raw data from sources 1:1
+- ✅ Basic type casting (SAFE_CAST)
+- ✅ Renaming columns for consistency (snake_case)
+- ❌ NO business logic
+- ❌ NO joins or aggregations
+- ❌ NO filtering (except null key removal)
+
+### Step 3: Generate Staging _schema.yml
+
+Create schema documentation for each domain's staging models with column descriptions and tests.
+
+---
+
+## Phase 4: Intermediate Layer Generation (Silver)
+
+📖 **Load `standards/01_architecture.md` for INTERMEDIATE layer responsibilities**
+
+### Step 1: Apply Consolidation Rules
+
+📖 **Reference `standards/03_model_consolidation.md` for consolidation rules**
+
+For each processor job, determine consolidation using the checklist:
+
+**✅ CONSOLIDATE if:**
+1. Sequential single-path transformations (no branching)
+2. Temporary tables with single use
+3. Multiple aggregations on same grain
+4. Small lookup tables (<10K rows, static)
+5. Simple child jobs (<5 components, no dependencies)
+
+**❌ DO NOT CONSOLIDATE if:**
+1. Orchestrator jobs (has tRunJob)
+2. Transaction boundaries (tDBConnection/Commit/Rollback)
+3. Error/reject flows (separate audit model)
+4. Reusable transformations (>3 dependencies)
+5. Different materialization strategies
+6. Different update cadences
+7. Cross-domain jobs
+
+### Step 2: Translate Talend Components to SQL
+
+📖 **Load `standards/05_component_mapping.md` for complete component-to-SQL translation**
+
+Use the component translation table:
+- tDBInput → `SELECT * FROM source()` or `ref()`
+- tMap → CASE/CONCAT/UPPER expressions and joins
+- tFilterRow → WHERE clause
+- tAggregateRow → GROUP BY ... HAVING
+- tJoin → LEFT/INNER JOIN
+- tSortRow → ORDER BY
+- tUniqRow → DISTINCT or ROW_NUMBER()
+- tRunJob → `ref('child_model')`
+
+### Step 3: Translate Talend Expressions
+
+📖 **Reference `standards/05_component_mapping.md` for expression translations**
+
+Translate ALL tMap expressions using the mappings:
+
+**String Functions**:
+- `row.field.substring(0,10)` → `SUBSTR(field, 1, 10)`
+- `row.field.toUpperCase()` → `UPPER(field)`
+- `row.field.trim()` → `TRIM(field)`
+- `field1 + field2` → `CONCAT(field1, field2)`
+
+**Date Functions**:
+- `TalendDate.getCurrentDate()` → `CURRENT_DATE()`
+- `TalendDate.parseDate("yyyy-MM-dd", str)` → `PARSE_DATE('%Y-%m-%d', str)`
+- `TalendDate.addDate(date, 1, "dd")` → `DATE_ADD(date, INTERVAL 1 DAY)`
+
+**Numeric Functions**:
+- `Math.round(value)` → `ROUND(value)`
+- `Math.floor(value)` → `FLOOR(value)`
+
+**Null/Conditional Logic**:
+- `row.field == null ? 0 : row.field` → `COALESCE(field, 0)`
+- `a ? (b ? x : y) : z` → `CASE WHEN a THEN CASE WHEN b THEN x ELSE y END ELSE z END`
+
+### Step 4: Translate Context Variables
+
+📖 **Load `standards/06_context_variables.md` for context variable mappings**
+
+Apply context variable mappings:
+- `context.schema` → `{{ target.dataset }}`
+- `context.from_date` → `{{ var('from_date') }}`
+- `context.env` → `{{ target.name }}`
+- `context.project_id` → `{{ target.project }}`
+- `globalMap.get("var")` → `{{ var('var') }}` or CTE column
+
+### Step 5: Generate Intermediate Models
+
+**Naming**: `int_[domain]__[transformation_description].sql`
+
+Create models with:
+- Config block (materialized='table' or incremental for >10M rows)
+- Talend source comments
+- Multiple CTEs for transformation steps
+- Complete SQL with all expressions translated
+- Final SELECT statement
+
+**✅ Intermediate Layer Rules**:
+- ✅ tMap transformations (expressions, CASE statements)
+- ✅ Joins (INNER, LEFT, lookups)
+- ✅ Filters (WHERE clauses)
+- ✅ Aggregations (GROUP BY)
+- ✅ Data quality rules
+- ❌ NO direct source() references (use staging models via ref())
+
+### Step 6: Generate Intermediate _schema.yml
+
+Create schema documentation with column descriptions and tests for each domain.
+
+---
+
+## Phase 5: Marts Layer Generation (Gold)
+
+📖 **Load `standards/01_architecture.md` for MARTS layer responsibilities**
+
+### Step 1: Generate Dimension Models
+
+**Naming**: `dim_[entity].sql` (NO domain prefix for marts)
+
+📖 **Load `standards/08_materialization.md` for dimension materialization**
+
+Create dimension models with:
+- Config block with materialized='table', cluster_by
+- Source data CTE from intermediate layer
+- Dimension attributes CTE with surrogate keys if needed
+- SCD Type 2 columns if needed (effective_start_date, effective_end_date, is_current)
+- Final SELECT statement
+
+### Step 2: Generate Fact Models
+
+**Naming**: `fct_[entity].sql` (NO domain prefix for marts)
+
+📖 **Reference `standards/08_materialization.md` and `standards/12_performance.md`**
+
+Create fact models with:
+- Config block: materialized='incremental', partition_by, cluster_by, unique_key
+- Fact data CTE from intermediate layer
+- Dimension lookups CTE (JOIN with dimension models)
+- Incremental logic block (WHERE date > MAX date FROM this)
+- Final SELECT statement
+
+**✅ Marts Layer Rules**:
+- ✅ Dimensional models (star schema)
+- ✅ Facts (transactions, events, metrics)
+- ✅ Dimensions (customers, products, dates)
+- ✅ Surrogate keys, SCD Type 2 if needed
+- ❌ NO raw data (only from intermediate)
+- ❌ NO cross-mart dependencies (facts should not reference other facts)
+
+### Step 3: Generate Marts _schema.yml
+
+Create schema documentation with relationship tests between facts and dimensions.
+
+---
+
+## Phase 6: Supporting Files Generation
+
+### Step 1: Generate Talend Compatibility Macros
+
+Create macros/talend_compatibility.sql with DBT macros for any Talend-specific functions not directly translatable.
+
+### Step 2: Generate Migration Report
+
+Create docs/migration_report.md with comprehensive documentation including:
+
+1. Executive Summary (migration date, jobs migrated, models generated, SQL coverage)
+2. Migration Metrics - Quality Scorecard table
+3. Job Classification (orchestrators, consolidated models, separate models)
+4. Domain Mapping table
+5. Component Translation Summary
+6. Context Variable Mappings table
+7. Validation Results
+8. Manual Review Required section (constraint violations, flagged items)
+9. Next Steps
+
+---
+
+## Phase 7: Quality Validation
+
+📖 **Load `standards/10_quality_validation.md` for quality metrics**
+
+### Step 1: Calculate Migration Quality Scorecard
+
+Calculate ALL metrics:
+- SQL Generation Coverage (complete_models / total_models * 100, must be ≥98%)
+- Model Reduction (dbt_models / talend_jobs, must be 0.15-0.30)
+- Source Coverage (sources_defined / tdb_input_tables * 100, must be 100%)
+- Naming Compliance (compliant_models / all_models * 100, must be 100%)
+- Dependency Preservation (ref_count / trun_job_count * 100, must be ≥95%)
+
+### Step 2: Run Post-Generation Validation
+
+📖 **Reference `standards/10_quality_validation.md` for validation checks**
+
+Run ALL validation checks:
+
+```bash
+cd "$OUTPUT_DIR"
+
+# Check 1: SQL completeness (no placeholders)
+echo "=== SQL Completeness Check ==="
+PLACEHOLDER_COUNT=$(grep -r "TODO\\|PLACEHOLDER\\|FIXME" models/*.sql 2>/dev/null | wc -l)
+echo "Placeholders found: $PLACEHOLDER_COUNT"
+
+# Check 2: Naming compliance
+echo "=== Naming Compliance Check ==="
+NON_COMPLIANT=$(find models -name "*.sql" -not -path "*/macros/*" | grep -v -E "(stg_|int_|fct_|dim_)[a-z0-9_]+\\.sql" | wc -l)
+echo "Non-compliant file names: $NON_COMPLIANT"
+
+# Check 3: Circular dependency check (if dbt available)
+echo "=== Circular Dependency Check ==="
+if command -v dbt &> /dev/null; then
+    dbt list --select "+fct_*" --output json > /dev/null 2>&1
+    echo "Result: $?"
+fi
+
+# Check 4: Source coverage
+echo "=== Source Coverage Check ==="
+SOURCE_COUNT=$(grep -c "name:" models/staging/_sources.yml 2>/dev/null || echo 0)
+echo "Sources defined: $SOURCE_COUNT"
+```
+
+### Step 3: Standards Compliance Self-Check
+
+📖 **Load `standards/13_constraints.md` for absolute constraints**
+
+Verify compliance with ALL absolute constraints:
+- Check 1: NO placeholder SQL
+- Check 2: NO naming violations
+- Check 3: NO over-consolidation (orchestrators preserved)
+- Check 4: NO circular dependencies
+- Check 5: NO undefined sources
+
+Display summary of all constraint checks.
+
+---
+
+## Phase 8: Final Summary & Next Steps
+
+### Migration Summary
+
+Display comprehensive migration summary:
+
+```bash
+echo ""
+echo "========================================="
+echo "✅ TALEND TO DBT MIGRATION COMPLETE"
+echo "========================================="
+echo ""
+echo "📊 Migration Statistics:"
+echo "   - Talend Jobs Analyzed: <X>"
+echo "   - DBT Models Generated: <Y>"
+echo "   - Model Reduction: <Z>%"
+echo "   - SQL Coverage: <XX>%"
+echo "   - Source Tables: <N>"
+echo "   - Domains Identified: <M>"
+echo ""
+echo "📁 Output Location:"
+echo "   $OUTPUT_DIR"
+echo ""
+echo "📋 Files Generated:"
+echo "   - Staging models: <X>"
+echo "   - Intermediate models: <Y>"
+echo "   - Marts models (facts/dims): <Z>"
+echo "   - Source definitions: <N> tables"
+echo "   - Schema files: <M>"
+echo "   - Migration report: docs/migration_report.md"
+echo ""
+echo "✅ Quality Checks:"
+echo "   - SQL completeness: <XX>%"
+echo "   - Naming compliance: <XX>%"
+echo "   - Source coverage: <XX>%"
+echo "   - No circular dependencies: <✅/❌>"
+echo ""
+echo "========================================="
+echo "📋 NEXT STEPS"
+echo "========================================="
+echo ""
+echo "1️⃣  Review the migration report:"
+echo "    cat $OUTPUT_DIR/docs/migration_report.md"
+echo ""
+echo "2️⃣  Address any manual review items (if flagged)"
+echo ""
+echo "3️⃣  Clear context (REQUIRED before Phase 3):"
+echo "    /clear"
+echo ""
+echo "4️⃣  Run Phase 3 quality validation:"
+echo "    /03-post-process $OUTPUT_DIR"
+echo ""
+echo "Phase 3 will:"
+echo "  • Format and lint all SQL files with sqlfluff"
+echo "  • Validate all YAML files with yamllint"
+echo "  • Parse and compile the DBT project (dbt parse)"
+echo "  • Format markdown documentation"
+echo "  • Generate comprehensive quality report"
+echo ""
+echo "========================================="
+```
+
+---
+
+## Constraint Violation Protocol
+
+📖 **Reference `standards/13_constraints.md` for constraint violation protocol**
+
+**IF any constraint cannot be followed during migration:**
+
+1. ⏸️ **STOP generation** for that specific model (not entire migration)
+2. 📝 **Document the conflict** in migration report with model name, constraint, pattern, recommendation, and status
+3. ✅ **Continue with remaining models**
+4. 🚩 **Include violation summary** in final migration report
+
+**Common constraint violations:**
+- Cannot extract domain from job name → Flag for manual domain assignment
+- Complex tMap expression has no direct SQL translation → Flag for manual SQL writing
+- Circular tRunJob dependency detected → Flag for dependency refactoring
+- Context variable not in mapping table → Flag for manual variable handling
+
+---
+
+## Success Criteria Checklist
+
+📖 **Reference `standards/13_constraints.md` for migration success criteria**
+
+**✅ Migration is successful when ALL criteria are met:**
+
+- [ ] SQL Generation Coverage ≥98%
+- [ ] Business Logic Preservation = 100% (all tMap expressions translated)
+- [ ] Model Reduction = 70-85%
+- [ ] All models follow naming standards (stg_*/int_*/fct_*/dim_* pattern)
+- [ ] All tDBInput tables defined in _sources.yml (100% source coverage)
+- [ ] All tRunJob dependencies converted to ref() (100% dependency preservation)
+- [ ] No circular dependencies detected (dbt list passes)
+- [ ] No placeholder SQL (TODO/PLACEHOLDER/FIXME removed or <2%)
+- [ ] All constraints followed (or violations documented)
+- [ ] Consolidation score in target range (0.15 ≤ score ≤ 0.30)
+- [ ] dbt parse completes successfully (project structure valid)
+- [ ] Test coverage ≥90% (tests defined for all critical models)
+
+**If any criterion is NOT met:**
+- Document the gap in migration report
+- Flag for manual review
+- Provide recommendation for resolution
+
+---
+
+## Execution Guarantee
+
+**The migration ALWAYS follows this order:**
+
+1. **Reference Standards** - Load relevant standards files as needed for each phase
+2. **Verify Inputs** - Validate all 5 input files present and complete
+3. **Analyze** - Classify jobs, extract domains, detect layers
+4. **Validate** - Run pre-generation validation checks
+5. **Generate Structure** - Create DBT project folders and config files
+6. **Generate Staging** - Create sources.yml + staging models (Bronze layer)
+7. **Generate Intermediate** - Apply consolidation + create transformation models (Silver layer)
+8. **Generate Marts** - Create facts + dimensions (Gold layer)
+9. **Generate Support** - Create macros, tests, documentation
+10. **Validate** - Run post-generation quality checks
+11. **Report** - Generate migration report with metrics
+12. **Summary** - Display completion summary with next steps
+
+**At each step, reference standards for HOW to implement the step.**
+
+---
+
+## End of Migration Command
+
+Generate production-ready DBT code that can be deployed immediately to BigQuery with minimal manual intervention.
+"""

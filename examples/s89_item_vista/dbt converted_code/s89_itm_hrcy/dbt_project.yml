@@ -1,0 +1,39 @@
+name: 's89_itm_hrcy'
+version: '1.0.0'
+
+profile: 's89_itm_hrcy'
+
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+
+vars:
+  metadata_source_name: 'schema_compliance_check'
+  metadata_schema_validation_table: 'schema_rules'
+  dag_dw_job_id: 'dummy'
+  dag_id: 'dummy'
+
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+query-comment:
+  job-label: True
+  comment: "{% if var('dag_id', none) and var('dag_dw_job_id', none) %}{{ query_comment(node, var('dag_id'), var('dag_dw_job_id')) }}{% else %}dbt_run{% endif %}"
+
+models:
+  staging:
+    s89_itm_hrcy:
+      s89_100_itm_hrcy_mstr_load:
+        +schema: MCD_DBT_IV
+  intermediate:
+    s89_itm_hrcy:
+      s89_100_itm_hrcy_mstr_load:
+        +schema: MCD_DBT_IV
+  mart:
+    s89_itm_hrcy:
+      s89_100_itm_hrcy_mstr_load:
+        +schema: MCD_DBT_IV

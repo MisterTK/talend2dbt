@@ -1,0 +1,39 @@
+{% macro delete_mo_dypt_sls() %}
+ 
+    {% set date_query %}
+        WITH date_context AS (
+            SELECT
+                MO_FROM_DT,
+                MO_TO_DT
+            FROM {{ source('RMDW_RAW', 'JS_IN_PARMS_AND_MAX_CALDT_psv') }}
+            QUALIFY ROW_NUMBER() OVER (ORDER BY MO_FROM_DT DESC) = 1
+        )
+        SELECT
+            FORMAT_DATE('%Y-%m-%d', MO_FROM_DT) AS MO_FROM_DT,
+            FORMAT_DATE('%Y-%m-%d', MO_TO_DT)   AS MO_TO_DT
+        FROM date_context
+    {% endset %}
+
+    {% if execute %}
+        {% set date_range = run_query(date_query) %}
+        {% set MO_FROM_DT = date_range.columns[0].values()[0] %}
+        {% set MO_TO_DT   = date_range.columns[1].values()[0] %}
+    {% else %}
+        {% set MO_FROM_DT = '1970-01-01' %}
+        {% set MO_TO_DT   = '1970-01-01' %}
+    {% endif %}
+
+   
+    {% set delete_sql %}
+        DELETE FROM `{{ var('Redshift_gdap_Schema') }}.mo_dypt_sls` AS target
+        WHERE EXISTS (
+            SELECT 1
+            FROM `{{ var('Redshift_gdap_Schema') }}.cal_dt` AS cal
+            WHERE cal.cal_dt BETWEEN DATE('{{ MO_FROM_DT }}') AND DATE('{{ MO_TO_DT }}')
+              AND cal.YR_NU = target.YR_NU
+              AND cal.MO_NU = target.MO_NU
+        )
+    {% endset %}
+
+    {% do run_query(delete_sql) %}
+{% endmacro %}

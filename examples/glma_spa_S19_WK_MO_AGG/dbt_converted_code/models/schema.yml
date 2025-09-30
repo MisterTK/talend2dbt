@@ -1,0 +1,85 @@
+version: 2
+
+sources:
+  - name: RMDW_RAW
+    project: dmgcp-del-155
+    schema: RMDW_RAW
+    tables:
+      - name: JS_IN_PARMS_AND_MAX_CALDT_psv
+      - name: CAL_DT
+      - name: WK_AGG
+      - name: MO_AGGS
+      - name: SLTC_GBL_REST_REPT_MO_SLS
+      - name: SLTC_LGCY_REST_REPT_MO_SLS
+      - name: GLMA_Pmix_Rest_Rept_Drv_psv
+      - name: GLMA_Ivld_Rejects_Delete
+      - name: GLMA_Dly_Pmix_Rejects_New
+      - name: DGLMA_N_SEQ5_Pmix_USNSN_CAT
+      - name: DGLMA_N_SEQ5_IDW_Dly_Pmix
+      - name: GLMA_Dly_Pmix_Rejects_MA17
+      - name: GLMA_Pmix_GSPA_CAT
+      - name: GLMA_Pmix_GIDW_CAT
+      - name: GLMA_DW_PMIX_UsnsnCat_temp
+      - name: GLMA_Dly_Pmix_psv
+      - name: glma_dly_pmix_psv_200
+      - name: GIDW_CAT_PIX_AL
+
+
+  - name : Redshift_gdap_Utility
+    project: dmgcp-del-155
+    schema: "{{ var('Redshift_gdap_Utility') }}"
+    tables: 
+      - name : dly_pmix_full_mkt_del
+      - name : dly_pmix_icrm_mkt_del
+      - name : dly_pmix_subset
+      - name : dly_pmix_rest_rept
+      - name : wk_mo_pmix_agg_drv
+      - name : glma_wkly_pmix_mo_dt_key
+      - name : dly_curn_xcng_rate
+      - name : mo_pmix_dy_cnt_qt_stge
+      - name : mo_pmix_gbal_stge
+      - name: ivld_dly_pmix_del_key 
+     
+  - name: Redshift_gdap_Stage
+    project: dmgcp-del-155
+    schema: "{{ var('Redshift_gdap_Stage') }}"
+    tables:
+          - name: dly_pmix
+          - name: dly_curn_xcng_rate
+          - name: mo_pmix_gbal_stge
+
+
+  - name: schema_compliance_check
+    project: dmgcp-del-155
+    schema: schema_compliance_check
+    tables:
+          - name: schema_rules
+
+
+
+  - name: Redshift_gdap_Schema
+    project: dmgcp-del-155
+    schema: "{{ var('Redshift_gdap_Schema') }}"
+    tables:
+      - name: dly_pmix
+      - name: dly_curn_xcng_rate
+      - name: mo_pmix_gbal_stge
+      - name: mo_pmix_dy_cnt_qt_stge
+      - name: glma_wkly_pmix_mo_dt_key
+      - name: ivld_dly_pmix
+      - name: ivld_sls_resn
+      - name: mcd_gbal_busn_lcat
+      - name: std_sld_menu_itm
+      - name: sld_menu_itm
+      - name: busnlcattype1
+      - name: curn
+      - name: pmix_unt_typ
+      - name: dw_terr_data_layr_icrm_load
+      - name: prd_cost
+      - name: prmo
+      - name: prmo_itm
+      - name: ctry
+      
+      
+
+    

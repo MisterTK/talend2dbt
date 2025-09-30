@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: rmdw_stg
+    project: prj-cp-dagdwstr-dev01
+    schema: rmdw_stg
+    tables:
+    - name: js_in_metedata_state_result
