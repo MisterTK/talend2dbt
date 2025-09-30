@@ -51,7 +51,5 @@ dbt_migrated/
 
 # Local development files
 CLAUDE.md
-GEMINI.md
 .claude/
-.gemini/
 examples/
