@@ -477,3 +477,4 @@ talend2dbt/
   Python)
 - **Document violations** - If a constraint can't be met, document it and continue
 - **Merge mode support** - Can add models to existing DBT projects with `--merge-into` flag
+- Do NOT add gemini.md or .gemini to my repo, keep them ignored
