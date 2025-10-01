@@ -50,6 +50,4 @@ talend_processed/
 dbt_migrated/
 
 # Local development files
-CLAUDE.md
-.claude/
 examples/
