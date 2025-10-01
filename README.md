@@ -32,7 +32,7 @@ This is **not a traditional migration tool**. It's an **AI-powered application**
 
 ```bash
 # 1. Clone repository
-git clone https://github.com/yourusername/talend2dbt.git
+git clone https://github.com/MisterTK/talend2dbt.git
 cd talend2dbt
 
 # 2. Bootstrap environment (run once)
