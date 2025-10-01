@@ -1,5 +1,6 @@
 ---
 description: Setup Python virtual environment and install talend2dbt package with all dependencies
+argument-hint: (no arguments)
 allowed-tools: Bash, Read
 ---
 
@@ -143,6 +144,12 @@ fi
 echo "✅ Virtual environment activated"
 echo "   Location: $VIRTUAL_ENV"
 echo ""
+
+# Set up Python aliases for current session
+alias python=python3
+export PATH="$VIRTUAL_ENV/bin:$PATH"
+echo "✅ Python aliases configured (python -> python3)"
+echo ""
 ```
 
 ### Step 4: Upgrade Core Tools
@@ -174,11 +181,20 @@ echo "==================================="
 echo "INSTALLING TALEND2DBT PACKAGE"
 echo "==================================="
 echo ""
+
+# Verify pyproject.toml exists
+if [ ! -f "pyproject.toml" ]; then
+    echo "❌ ERROR: pyproject.toml not found in current directory"
+    echo "   Current directory: $(pwd)"
+    echo "   Please run this command from the project root"
+    exit 1
+fi
+
 echo "Installing from pyproject.toml..."
 echo ""
 
 # Install package in editable mode with all dependencies
-pip install -e . --quiet
+pip install -e .
 
 if [ $? -ne 0 ]; then
     echo "❌ ERROR: Failed to install talend2dbt package"
@@ -200,7 +216,16 @@ if [ $? -ne 0 ]; then
 fi
 
 echo ""
-echo "✅ talend2dbt package installed successfully"
+
+# Verify package was actually installed
+if pip show talend2dbt &> /dev/null; then
+    echo "✅ talend2dbt package installed successfully"
+else
+    echo "❌ ERROR: talend2dbt package not found after installation"
+    echo "   This should not happen. Try: pip install -e . --force-reinstall"
+    exit 1
+fi
+
 echo ""
 ```
 
@@ -219,11 +244,13 @@ python -c "
 import sys
 try:
     # Test talend2dbt package imports
-    from talend_parser.talend_parser import TalendParser
+    from talend_parser.talend_parser import TalendParserLLMOptimized, ExtractedSQL, TMapExpression
     from dbt_generator.generator import DBTGenerator
     print('✅ talend2dbt package verified')
-    print('   - talend_parser: OK')
-    print('   - dbt_generator: OK')
+    print('   - talend_parser.TalendParserLLMOptimized: OK')
+    print('   - talend_parser.ExtractedSQL: OK')
+    print('   - talend_parser.TMapExpression: OK')
+    print('   - dbt_generator.DBTGenerator: OK')
 
     # Test critical dependencies
     import yaml

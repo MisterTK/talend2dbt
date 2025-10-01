@@ -1517,6 +1517,8 @@ else
     echo "5️⃣  Run Phase 3 quality validation:"
     echo "    /03-post-process $OUTPUT_DIR"
     echo ""
+    echo "Copy and paste the command above after running /clear"
+    echo ""
     echo "Phase 3 will:"
     echo "  • Format and lint all SQL files with sqlfluff"
     echo "  • Validate all YAML files with yamllint"

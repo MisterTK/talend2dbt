@@ -23,18 +23,55 @@ Run the LLM-optimized Talend parser to extract complete job information from raw
 
 ## Execution Steps
 
-### Step 1: Validate Input Directory
+### Step 1: Activate Virtual Environment
 
 ```bash
-# Verify the input directory exists and contains .item files
-ls -la "$1"/**/*.item | head -20
+# Activate the virtual environment created by bootstrap
+if [ ! -d "venv" ]; then
+    echo "❌ ERROR: Virtual environment not found"
+    echo "Please run /00-bootstrap first"
+    exit 1
+fi
+
+source venv/bin/activate
+
+if [ -z "$VIRTUAL_ENV" ]; then
+    echo "❌ ERROR: Failed to activate virtual environment"
+    exit 1
+fi
+
+echo "✅ Virtual environment activated: $VIRTUAL_ENV"
+echo ""
 ```
 
-**Expected Output:**
-- Multiple `.item` files in the directory tree
-- If no files found, report error and stop
+### Step 2: Validate Input Directory
 
-### Step 2: Set Output Directory
+```bash
+# Verify the input directory exists
+if [ ! -d "$1" ]; then
+  echo "❌ ERROR: Input directory does not exist: $1"
+  exit 1
+fi
+
+# Check for .item files
+ITEM_COUNT=$(find "$1" -name "*.item" -type f 2>/dev/null | wc -l | tr -d ' ')
+
+if [ "$ITEM_COUNT" -eq 0 ]; then
+  echo "❌ ERROR: No .item files found in: $1"
+  echo "Please provide a directory containing Talend .item files"
+  exit 1
+fi
+
+echo "✅ Found $ITEM_COUNT Talend .item files"
+echo ""
+
+# Display first 20 files
+echo "Sample files:"
+ls -la "$1"/**/*.item 2>/dev/null | head -20
+echo ""
+```
+
+### Step 3: Set Output Directory
 
 ```bash
 # Use provided output path or default to sibling directory
@@ -48,11 +85,32 @@ mkdir -p "$OUTPUT_DIR"
 echo "Output directory: $OUTPUT_DIR"
 ```
 
-### Step 3: Execute Talend Parser
+### Step 4: Execute Talend Parser
 
 ```bash
-# Run the LLM-optimized parser
-python talend_parser/talend_parser.py "$1" "$OUTPUT_DIR"
+# Run the LLM-optimized parser using venv Python
+echo "Running Talend parser..."
+echo "  Input: $1"
+echo "  Output: $OUTPUT_DIR"
+echo ""
+
+# Always use venv/bin/activate to ensure correct environment
+source venv/bin/activate && python -m talend_parser.talend_parser "$1" "$OUTPUT_DIR"
+
+if [ $? -ne 0 ]; then
+  echo ""
+  echo "❌ ERROR: Parser failed. See error messages above."
+  echo ""
+  echo "Common fixes:"
+  echo "  - Check .item files are valid XML (not corrupted)"
+  echo "  - Verify virtual environment exists (run /00-bootstrap)"
+  echo "  - Try: pip install -e . --force-reinstall"
+  exit 1
+fi
+
+echo ""
+echo "✅ Parser execution completed"
+echo ""
 ```
 
 **What This Does:**
@@ -61,11 +119,49 @@ python talend_parser/talend_parser.py "$1" "$OUTPUT_DIR"
 - Analyzes job hierarchy, dependencies, and complexity
 - Generates LLM-optimized output files with token statistics
 
-### Step 4: Verify Output Files
+### Step 5: Verify Output Files
 
 ```bash
-# Check all expected output files were created
+# Validate all required files exist and are non-empty
+REQUIRED_FILES=(
+  "talend_extraction.json"
+  "sql_queries.sql"
+  "transformations.json"
+  "context_to_dbt.yml"
+  "extraction_summary.txt"
+  "token_statistics.txt"
+)
+
+echo "Validating output files..."
+ALL_VALID=true
+
+for file in "${REQUIRED_FILES[@]}"; do
+  if [ ! -f "$OUTPUT_DIR/$file" ]; then
+    echo "❌ ERROR: Missing required file: $file"
+    ALL_VALID=false
+  elif [ ! -s "$OUTPUT_DIR/$file" ]; then
+    echo "⚠️  WARNING: Empty file: $file"
+  else
+    SIZE=$(ls -lh "$OUTPUT_DIR/$file" | awk '{print $5}')
+    echo "✅ $file ($SIZE)"
+  fi
+done
+
+echo ""
+
+if [ "$ALL_VALID" = false ]; then
+  echo "❌ ERROR: Some required files are missing"
+  echo "Parser may have failed. Check error messages above."
+  exit 1
+fi
+
+echo "✅ All required files present"
+echo ""
+
+# Show directory listing
+echo "Complete output:"
 ls -lh "$OUTPUT_DIR"
+echo ""
 ```
 
 **Expected Files:**
@@ -76,7 +172,7 @@ ls -lh "$OUTPUT_DIR"
 5. `extraction_summary.txt` - Human-readable summary
 6. `token_statistics.txt` - Size and token analysis
 
-### Step 5: Display Summary
+### Step 6: Display Summary
 
 ```bash
 # Show extraction summary
@@ -87,45 +183,87 @@ echo "Token Statistics:"
 cat "$OUTPUT_DIR/token_statistics.txt"
 ```
 
-### Step 6: Quick Analysis
+### Step 7: Quick Analysis
 
 Read and display key metrics from the extraction:
 
-```python
-# Parse the extraction summary
+```bash
+# Use Python to parse and display extraction metrics
+python << 'PYTHON_EOF'
 import json
+import sys
 
-with open(f"{OUTPUT_DIR}/talend_extraction.json") as f:
-    data = json.load(f)
+try:
+    # Load extraction data
+    with open("$OUTPUT_DIR/talend_extraction.json") as f:
+        data = json.load(f)
 
-metadata = data.get("extraction_metadata", {})
-print(f"""
-Pre-Processing Complete!
-========================
+    # Get metadata
+    metadata = data.get("extraction_metadata", {})
 
-📊 Extraction Results:
-   - Total Jobs: {metadata.get('total_jobs', 0)}
-   - SQL Queries: {metadata.get('total_sql_queries', 0)}
-   - Transformations (tMap): {metadata.get('total_tmap_expressions', 0)}
-   - Unique Tables: {metadata.get('unique_tables', 0)}
-   - Context Variables: {metadata.get('context_variables', 0)}
-   - Transaction Groups: {metadata.get('transaction_groups', 0)}
-   - Error Patterns: {metadata.get('error_patterns', 0)}
-   - Data Quality Rules: {metadata.get('data_quality_rules', 0)}
+    # Display summary
+    print()
+    print("=" * 60)
+    print("PRE-PROCESSING COMPLETE")
+    print("=" * 60)
+    print()
+    print("Extraction Results:")
+    print(f"  - Total Jobs: {metadata.get('total_jobs', 0)}")
+    print(f"  - SQL Queries: {metadata.get('total_sql_queries', 0)}")
+    print(f"  - Transformations (tMap): {metadata.get('total_tmap_expressions', 0)}")
+    print(f"  - Unique Tables: {metadata.get('unique_tables', 0)}")
+    print(f"  - Context Variables: {metadata.get('context_variables', 0)}")
+    print(f"  - Transaction Groups: {metadata.get('transaction_groups', 0)}")
+    print(f"  - Error Patterns: {metadata.get('error_patterns', 0)}")
+    print(f"  - Data Quality Rules: {metadata.get('data_quality_rules', 0)}")
+    print()
+    print(f"Output Location: $OUTPUT_DIR")
+    print()
 
-📁 Output Location: {OUTPUT_DIR}
+    # Display job hierarchy
+    jobs_summary = data.get("jobs_summary", {})
+    if jobs_summary:
+        print("Job Hierarchy:")
+        print()
 
-🎯 Job Complexity:
-""")
+        # Sort by component count (proxy for complexity)
+        sorted_jobs = sorted(
+            jobs_summary.items(),
+            key=lambda x: x[1].get('components', 0),
+            reverse=True
+        )
 
-# Display job hierarchy
-jobs_summary = data.get("jobs_summary", {})
-for job_name, job_info in sorted(jobs_summary.items(),
-                                  key=lambda x: x[1].get('complexity_score', 0),
-                                  reverse=True)[:10]:
-    role = job_info.get('role', 'unknown')
-    complexity = job_info.get('complexity_score', 0)
-    print(f"   - {job_name} ({role}): complexity={complexity}")
+        for job_name, job_info in sorted_jobs:
+            role = job_info.get('role', 'unknown')
+            comp_count = job_info.get('components', 0)
+            sql_count = job_info.get('sql_queries', 0)
+            tmap_count = job_info.get('transformations', 0)
+
+            print(f"  {job_name}")
+            print(f"    Role: {role} | Components: {comp_count} | SQL: {sql_count} | tMap: {tmap_count}")
+            print()
+
+    print("=" * 60)
+    print()
+
+except FileNotFoundError as e:
+    print(f"ERROR: Could not find extraction file: {e}", file=sys.stderr)
+    sys.exit(1)
+except json.JSONDecodeError as e:
+    print(f"ERROR: Invalid JSON in extraction file: {e}", file=sys.stderr)
+    sys.exit(1)
+except Exception as e:
+    print(f"ERROR: Failed to parse extraction data: {e}", file=sys.stderr)
+    sys.exit(1)
+
+PYTHON_EOF
+
+if [ $? -ne 0 ]; then
+  echo ""
+  echo "⚠️  WARNING: Could not parse extraction metrics"
+  echo "Check $OUTPUT_DIR/extraction_summary.txt for details"
+  echo ""
+fi
 ```
 
 ## Success Validation
